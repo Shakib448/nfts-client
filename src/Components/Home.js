@@ -5,9 +5,11 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
+import clsx from "clsx";
 import React from "react";
 import ellipse1 from "../Images/Ellipse 18.png";
 import ellipse2 from "../Images/Ellipse 19.png";
+import "./Main.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,14 +48,14 @@ const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <Box variant="div" className={classes.ellipse1}>
-        <img src={ellipse1} alt="top left" className={classes.img} />
+      <Box variant="div" className={clsx(classes.ellipse1)}>
+        <img src={ellipse1} alt="top left" className={clsx(classes.img)} />
       </Box>
       <Box variant="div" className={classes.ellipse2}>
-        <img src={ellipse2} alt="top left" className={classes.img} />
+        <img src={ellipse2} alt="top left" className={clsx(classes.img)} />
       </Box>
       <Container>
-        <Grid container direction="row" className={classes.root}>
+        <Grid container direction="row" className={clsx(classes.root)}>
           <Grid
             container
             justify="center"
@@ -81,8 +83,20 @@ const Home = () => {
                 NFTs Bio Link
               </Typography>
               <Grid container justify="center">
-                <Typography variant="h6" className={classes.fonts}>
+                <Typography variant="h6" className={clsx(classes.fonts)}>
                   One link to show ‘em all
+                </Typography>
+                <Typography
+                  variant="body2"
+                  component="p"
+                  className="home__gradient"
+                >
+                  NFTs bio is the only link you need. Stop spamming and start
+                  building your brand with one memorable URL. Create a beautiful
+                  profile to connect with your audience, showcase the NFT
+                  collections, or just to show off your favorite collectible.
+                  NFTs bio takes less than a minute to setup. It's easy to use,
+                  fun to share and free forever!
                 </Typography>
               </Grid>
             </Box>
