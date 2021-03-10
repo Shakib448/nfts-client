@@ -9,6 +9,9 @@ import clsx from "clsx";
 import React from "react";
 import ellipse1 from "../../Images/Ellipse 18.png";
 import ellipse2 from "../../Images/Ellipse 19.png";
+import twitter from "../../Images/twitter 1.png";
+import telegram from "../../Images/telegram 1.png";
+import linkedin from "../../Images/linkedin 1.png";
 import "./Home.scss";
 
 const useStyles = makeStyles((theme) => ({
@@ -43,6 +46,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "24px",
     lineHeight: "28px",
     color: "#999999",
+  },
+  icon: {
+    width: "41px",
+    height: "41px",
+    margin: "0 35px",
+  },
+  iconContentArea: {
+    margin: "20px 0",
   },
 }));
 
@@ -96,6 +107,7 @@ const Home = () => {
                   variant="body2"
                   component="p"
                   className="home__gradient"
+                  gutterBottom
                 >
                   NFTs bio is the only link you need. Stop spamming and start
                   building your brand with one memorable URL. Create a beautiful
@@ -104,6 +116,28 @@ const Home = () => {
                   NFTs bio takes less than a minute to setup. It's easy to use,
                   fun to share and free forever!
                 </Typography>
+              </Grid>
+              <Grid
+                container
+                justify="center"
+                alignItems="center"
+                className={clsx(classes.iconContentArea)}
+              >
+                <img
+                  src={twitter}
+                  alt="twitter"
+                  className={clsx(classes.icon)}
+                />
+                <img
+                  src={telegram}
+                  alt="telegram"
+                  className={clsx(classes.icon)}
+                />
+                <img
+                  src={linkedin}
+                  alt="linkedin"
+                  className={clsx(classes.icon)}
+                />
               </Grid>
             </Box>
           </Grid>
