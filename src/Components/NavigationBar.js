@@ -36,13 +36,13 @@ const NavigationBar = () => {
     <div className={classes.root}>
       <AppBar position="fixed" color="transparent" className={classes.appBar}>
         <Toolbar className={classes.toolBar}>
-          <Grid container>
+          <Grid container justify="flex-start">
             <Typography variant="h6" className={classes.title}>
               News
             </Typography>
           </Grid>
 
-          <Grid container>
+          <Grid container justify="center">
             <Button className={classes.menuButton} color="inherit">
               Home
             </Button>
