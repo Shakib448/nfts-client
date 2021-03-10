@@ -30,29 +30,58 @@ const useStyles = makeStyles((theme) => ({
     width: "205px",
     height: "52px",
   },
+  grid: {
+    height: "100vh",
+    alignItems: "center",
+    flexDirection: "column",
+  },
 }));
 
 const Home = () => {
   const classes = useStyles();
   return (
-    <Container>
+    <>
       <Box variant="div" className={classes.ellipse1}>
         <img src={ellipse1} alt="top left" className={classes.img} />
       </Box>
       <Box variant="div" className={classes.ellipse2}>
         <img src={ellipse2} alt="top left" className={classes.img} />
       </Box>
-      <Grid container direction="row">
-        <Grid item md={6} lg={6} sm={12} xs={12}>
-          <Grid container justify="flex-start"></Grid>
-        </Grid>
-        <Grid item md={6} lg={6} sm={12} xs={12}>
-          <Grid container justify="center">
-            <Typography variant="h3">NFTs Bio Link</Typography>
+      <Container>
+        <Grid container direction="row">
+          <Grid
+            container
+            justify="center"
+            alignItems="center"
+            item
+            md={6}
+            lg={6}
+            sm={12}
+            xs={12}
+          >
+            <Grid container justify="flex-start"></Grid>
+          </Grid>
+          <Grid
+            container
+            justify="center"
+            alignItems="center"
+            item
+            md={6}
+            lg={6}
+            sm={12}
+            xs={12}
+            className={classes.grid}
+          >
+            <Box>
+              <Typography variant="h3">NFTs Bio Link</Typography>
+              <Grid container justify="center">
+                <Typography variant="h6">One link to show ‘em all</Typography>
+              </Grid>
+            </Box>
           </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </>
   );
 };
 
