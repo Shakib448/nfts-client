@@ -3,8 +3,8 @@ import NavigationBar from "./Shared/NavigationBar";
 import Theme from "./Theme/Theme";
 import { CssBaseline, MuiThemeProvider } from "@material-ui/core";
 import GlobalStyles from "./Theme/GlobalStyle";
-import "../src/Shared/MobileBar/styles.css";
-import { Example } from "./Shared/MobileBar/Example";
+import "../src/Shared/MobileBar/styles.scss";
+import { MobileBar } from "./Shared/MobileBar/MobileBar";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <CssBaseline />
       <GlobalStyles />
       {/* <NavigationBar /> */}
-      <Example />
+      <MobileBar />
     </MuiThemeProvider>
   );
 }

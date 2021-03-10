@@ -25,7 +25,7 @@ const sidebar = {
   },
 };
 
-export const Example = () => {
+export const MobileBar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
