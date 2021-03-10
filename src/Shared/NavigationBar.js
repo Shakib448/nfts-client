@@ -2,9 +2,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { Grid } from "@material-ui/core";
+import logo from "../Images/logo.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,9 +54,7 @@ const NavigationBar = () => {
       <AppBar position="fixed" color="transparent" className={classes.appBar}>
         <Toolbar className={classes.toolBar}>
           <Grid container justify="flex-start">
-            <Typography variant="h6" className={classes.title}>
-              Logo
-            </Typography>
+            <img src={logo} alt="logo" />
           </Grid>
           <Grid container justify="center">
             <Button className={classes.menuButton} color="inherit">
