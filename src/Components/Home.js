@@ -79,11 +79,17 @@ const Home = () => {
             xs={12}
           >
             <Box>
-              <Typography variant="h3" gutterBottom>
-                NFTs Bio Link
-              </Typography>
               <Grid container justify="center">
-                <Typography variant="h6" className={clsx(classes.fonts)}>
+                <Typography variant="h3" gutterBottom>
+                  NFTs Bio Link
+                </Typography>
+              </Grid>
+              <Grid container justify="center">
+                <Typography
+                  variant="h6"
+                  className={clsx(classes.fonts)}
+                  gutterBottom
+                >
                   One link to show ‘em all
                 </Typography>
                 <Typography
