@@ -104,8 +104,7 @@ const Home = () => {
                   One link to show ‘em all
                 </Typography>
                 <Typography
-                  variant="body2"
-                  component="p"
+                  variant="subtitle1"
                   className="home__gradient"
                   gutterBottom
                 >
