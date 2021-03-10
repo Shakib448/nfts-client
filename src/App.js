@@ -1,10 +1,11 @@
 import "./App.scss";
+import NavigationBar from "./Components/NavigationBar";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome muktadir</h1>
-    </div>
+    <>
+      <NavigationBar />
+    </>
   );
 }
 
