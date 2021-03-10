@@ -29,9 +29,9 @@ export const MenuItem = ({ i }) => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        <div className="icon-placeholder" style={style} />
-
-        <div className="text-placeholder" style={style} />
+        {i.route}
+        {/* <div className="icon-placeholder" style={style} /> */}
+        {/* <div className="text-placeholder" style={style} /> */}
       </motion.li>
     </>
   );
