@@ -47,7 +47,6 @@ const theme = createMuiTheme({
     icon: {
       iconColor,
     },
-
     tonalOffset: 0.2,
     background: {
       default: background,

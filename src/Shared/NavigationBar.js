@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme) => ({
   toolBar: {
     display: "flex",
     justifyContent: "center",
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
   },
   signUp: {
     borderRadius: "25px",
