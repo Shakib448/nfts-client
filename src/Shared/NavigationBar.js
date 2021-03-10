@@ -9,11 +9,17 @@ import { Grid } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   menuButton: {
     marginRight: theme.spacing(4),
     fontSize: 20,
     textTransform: "none",
+    [theme.breakpoints.down("md")]: {
+      fontSize: 17,
+    },
   },
 
   title: {
@@ -31,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 20,
     background: "linear-gradient(45deg, #DAC3FC 30%, #97C5FC 90%)",
     textTransform: "none",
+    [theme.breakpoints.down("md")]: {
+      fontSize: 17,
+    },
   },
   appBar: {
     boxShadow: "none",
