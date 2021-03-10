@@ -1,4 +1,4 @@
-body {
+.mobileBar__nav {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -96,7 +96,7 @@ li {
 }
 
 @media (min-width: 960px) {
-  nav {
+  .mobileBar__nav {
     display: none;
   }
 }
