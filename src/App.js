@@ -11,7 +11,7 @@ function App() {
       <CssBaseline />
       <GlobalStyles />
       <NavigationBar />
-      {/* <MobileBar /> */}
+      <MobileBar />
     </MuiThemeProvider>
   );
 }

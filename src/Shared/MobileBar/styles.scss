@@ -26,7 +26,7 @@ nav {
   background: linear-gradient(180deg, #dac3fc 30%, #97c5fc 90%);
 }
 
-button {
+.menuToggle__mobile-btn {
   outline: none;
   border: none;
   -webkit-user-select: none;
@@ -91,4 +91,10 @@ li {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+@media (min-width: 960px) {
+  nav {
+    display: none;
+  }
 }
