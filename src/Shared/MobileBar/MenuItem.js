@@ -1,5 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import { Button, makeStyles } from "@material-ui/core";
 
 const variants = {
   open: {
@@ -18,10 +19,14 @@ const variants = {
   },
 };
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
+const useStyles = makeStyles((theme) => ({
+  menuButton: {
+    fontSize: 20,
+  },
+}));
 
-export const MenuItem = ({ i }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+export const MenuItem = ({ item }) => {
+  const classes = useStyles();
   return (
     <>
       <motion.li
@@ -29,9 +34,7 @@ export const MenuItem = ({ i }) => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        {i.route}
-        {/* <div className="icon-placeholder" style={style} /> */}
-        {/* <div className="text-placeholder" style={style} /> */}
+        <Button className={classes.menuButton}>{item.route}</Button>
       </motion.li>
     </>
   );

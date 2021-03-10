@@ -12,14 +12,14 @@ const variants = {
 };
 
 export const Navigation = () => (
-  <motion.ul variants={variants}>
-    {itemIds.map((i) => (
-      <MenuItem i={i} key={i} />
+  <motion.ul className="mobileBar__ul" variants={variants}>
+    {routesName.map((item, i) => (
+      <MenuItem item={item} key={i} />
     ))}
   </motion.ul>
 );
 
-const itemIds = [
+const routesName = [
   { route: "Home" },
   { route: "About" },
   { route: "Contact" },
