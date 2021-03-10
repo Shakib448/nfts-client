@@ -7,13 +7,15 @@ import {
 } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
-import ellipse1 from "../Images/Ellipse 18.png";
-import ellipse2 from "../Images/Ellipse 19.png";
-import "./Main.scss";
+import ellipse1 from "../../Images/Ellipse 18.png";
+import ellipse2 from "../../Images/Ellipse 19.png";
+import "./Home.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
+    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(4),
   },
   ellipse1: {
     position: "absolute",
@@ -80,9 +82,7 @@ const Home = () => {
           >
             <Box>
               <Grid container justify="center">
-                <Typography variant="h3" gutterBottom>
-                  NFTs Bio Link
-                </Typography>
+                <Typography variant="h3">NFTs Bio Link</Typography>
               </Grid>
               <Grid container justify="center">
                 <Typography

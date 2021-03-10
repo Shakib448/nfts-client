@@ -4,7 +4,7 @@ import { CssBaseline, MuiThemeProvider } from "@material-ui/core";
 import GlobalStyles from "./Theme/GlobalStyle";
 import { MobileBar } from "./Shared/MobileBar/MobileBar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./Components/Home";
+import Home from "./Components/Home/Home";
 
 function App() {
   return (
