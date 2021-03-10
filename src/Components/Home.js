@@ -1,4 +1,10 @@
-import { Box, Container, Grid, makeStyles } from "@material-ui/core";
+import {
+  Box,
+  Container,
+  Grid,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import React from "react";
 import ellipse1 from "../Images/Ellipse 18.png";
 import ellipse2 from "../Images/Ellipse 19.png";
@@ -20,6 +26,10 @@ const useStyles = makeStyles((theme) => ({
     height: "485px",
     width: "485px",
   },
+  animateImg: {
+    width: "205px",
+    height: "52px",
+  },
 }));
 
 const Home = () => {
@@ -32,8 +42,16 @@ const Home = () => {
       <Box variant="div" className={classes.ellipse2}>
         <img src={ellipse2} alt="top left" className={classes.img} />
       </Box>
-      <Grid container item md={6} lg={6} sm={12} xs={12}></Grid>
-      <Grid container item md={6} lg={6} sm={12} xs={12}></Grid>
+      <Grid container direction="row">
+        <Grid item md={6} lg={6} sm={12} xs={12}>
+          <Grid container justify="flex-start"></Grid>
+        </Grid>
+        <Grid item md={6} lg={6} sm={12} xs={12}>
+          <Grid container justify="center">
+            <Typography variant="h3">NFTs Bio Link</Typography>
+          </Grid>
+        </Grid>
+      </Grid>
     </Container>
   );
 };

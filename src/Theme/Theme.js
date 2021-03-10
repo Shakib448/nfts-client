@@ -36,6 +36,7 @@ const theme = createMuiTheme({
       black,
       darkBlack,
     },
+
     navigation: {
       navigationColor,
     },
@@ -53,6 +54,7 @@ const theme = createMuiTheme({
     },
     spacing,
   },
+
   breakpoints: {
     values: {
       xl,
@@ -120,9 +122,6 @@ const theme = createMuiTheme({
         },
       },
     },
-  },
-  typography: {
-    useNextVariants: true,
   },
 });
 
