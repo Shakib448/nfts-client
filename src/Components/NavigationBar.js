@@ -13,11 +13,9 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(4),
     fontSize: 20,
+    textTransform: "none",
   },
-  appbar: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
+
   title: {
     flexGrow: 1,
   },
@@ -26,6 +24,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
+  },
+  signUp: {
+    borderRadius: "25px",
+    marginRight: theme.spacing(4),
+    fontSize: 20,
+    background: "linear-gradient(45deg, #DAC3FC 30%, #97C5FC 90%)",
+    textTransform: "none",
+  },
+  appBar: {
+    boxShadow: "none",
   },
 }));
 
@@ -38,10 +46,9 @@ const NavigationBar = () => {
         <Toolbar className={classes.toolBar}>
           <Grid container justify="flex-start">
             <Typography variant="h6" className={classes.title}>
-              News
+              Logo
             </Typography>
           </Grid>
-
           <Grid container justify="center">
             <Button className={classes.menuButton} color="inherit">
               Home
@@ -58,7 +65,11 @@ const NavigationBar = () => {
             <Button className={classes.menuButton} color="inherit">
               Login
             </Button>
-            <Button className={classes.menuButton} color="inherit">
+            <Button
+              className={classes.signUp}
+              color="inherit"
+              variant="contained"
+            >
               Signup
             </Button>
           </Grid>
