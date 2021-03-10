@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 17,
     },
   },
-
   title: {
     flexGrow: 1,
   },
