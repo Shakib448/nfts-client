@@ -10,6 +10,9 @@ import ellipse1 from "../Images/Ellipse 18.png";
 import ellipse2 from "../Images/Ellipse 19.png";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    height: "100vh",
+  },
   ellipse1: {
     position: "absolute",
     left: "0",
@@ -30,11 +33,6 @@ const useStyles = makeStyles((theme) => ({
     width: "205px",
     height: "52px",
   },
-  grid: {
-    height: "100vh",
-    alignItems: "center",
-    flexDirection: "column",
-  },
 }));
 
 const Home = () => {
@@ -48,7 +46,7 @@ const Home = () => {
         <img src={ellipse2} alt="top left" className={classes.img} />
       </Box>
       <Container>
-        <Grid container direction="row">
+        <Grid container direction="row" className={classes.root}>
           <Grid
             container
             justify="center"
@@ -70,7 +68,6 @@ const Home = () => {
             lg={6}
             sm={12}
             xs={12}
-            className={classes.grid}
           >
             <Box>
               <Typography variant="h3">NFTs Bio Link</Typography>
