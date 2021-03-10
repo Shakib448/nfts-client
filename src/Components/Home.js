@@ -33,6 +33,13 @@ const useStyles = makeStyles((theme) => ({
     width: "205px",
     height: "52px",
   },
+  fonts: {
+    fontStyle: "normal",
+    fontWeight: "bold",
+    fontSize: "24px",
+    lineHeight: "28px",
+    color: "#999999",
+  },
 }));
 
 const Home = () => {
@@ -70,9 +77,13 @@ const Home = () => {
             xs={12}
           >
             <Box>
-              <Typography variant="h3">NFTs Bio Link</Typography>
+              <Typography variant="h3" gutterBottom>
+                NFTs Bio Link
+              </Typography>
               <Grid container justify="center">
-                <Typography variant="h6">One link to show ‘em all</Typography>
+                <Typography variant="h6" className={classes.fonts}>
+                  One link to show ‘em all
+                </Typography>
               </Grid>
             </Box>
           </Grid>
