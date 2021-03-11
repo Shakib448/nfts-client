@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "none",
     fontFamily: "Roboto",
     fontWeight: "bold",
+    borderRadius: "20px",
   },
 }));
 
