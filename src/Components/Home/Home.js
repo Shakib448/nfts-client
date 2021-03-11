@@ -1,9 +1,9 @@
-import { Box, Container, Grid, makeStyles } from "@material-ui/core";
+import { Container, Grid, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
-import ellipse1 from "../../Images/Ellipse 18.png";
-import ellipse2 from "../../Images/Ellipse 19.png";
-import { motion } from "framer-motion";
+// import ellipse1 from "../../Images/Ellipse 18.png";
+// import ellipse2 from "../../Images/Ellipse 19.png";
+// import { motion } from "framer-motion";
 import HomeContents from "./HomeContents";
 import "./Home.scss";
 import HomeAnimation from "./HomeAnimation";
@@ -36,21 +36,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const imgAnimation = {
-  anim: {
-    scale: [1, 2, 2, 1, 1],
-    transition: {
-      duration: 5,
-      repeat: Infinity,
-    },
-  },
-};
+// const imgAnimation = {
+//   anim: {
+//     scale: [1, 2, 2, 1, 1],
+//     transition: {
+//       duration: 5,
+//       repeat: Infinity,
+//     },
+//   },
+// };
 
 const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <Box
+      {/* <Box
         variant="div"
         component={motion.div}
         variants={imgAnimation}
@@ -59,6 +59,7 @@ const Home = () => {
       >
         <img src={ellipse1} alt="top left" className={clsx(classes.img)} />
       </Box>
+
       <Box
         variant="div"
         component={motion.div}
@@ -67,7 +68,7 @@ const Home = () => {
         className={classes.ellipse2}
       >
         <img src={ellipse2} alt="top left" className={clsx(classes.img)} />
-      </Box>
+      </Box> */}
       <Container>
         <Grid container direction="row" className={clsx(classes.root)}>
           <Grid
@@ -81,7 +82,6 @@ const Home = () => {
             xs={12}
           >
             <Grid container justify="center">
-              <span></span>
               <HomeAnimation />
             </Grid>
           </Grid>
