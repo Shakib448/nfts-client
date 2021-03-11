@@ -58,6 +58,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const imgAnimation = {
+  anim: {
+    scale: [1, 2, 2, 1, 1],
+    transition: {
+      duration: 5,
+      repeat: Infinity,
+    },
+  },
+};
+
 const Home = () => {
   const classes = useStyles();
   return (
@@ -65,8 +75,8 @@ const Home = () => {
       <Box
         variant="div"
         component={motion.div}
-        animate={{ scale: [1, 2, 2, 1, 1] }}
-        transition={{ duration: 5, repeat: Infinity }}
+        variants={imgAnimation}
+        animate="anim"
         className={clsx(classes.ellipse1)}
       >
         <img src={ellipse1} alt="top left" className={clsx(classes.img)} />
@@ -74,8 +84,8 @@ const Home = () => {
       <Box
         variant="div"
         component={motion.div}
-        animate={{ scale: [1, 2, 2, 1, 1] }}
-        transition={{ duration: 5, repeat: Infinity }}
+        variants={imgAnimation}
+        animate="anim"
         className={classes.ellipse2}
       >
         <img src={ellipse2} alt="top left" className={clsx(classes.img)} />
