@@ -19,9 +19,16 @@
 }
 
 .img1 {
-  // @include imagePosition(50px, 0, 0, 0);
-  position: absolute;
-  top: "1000px !important";
-  right: 0;
-  bottom: 0;
+  @include imagePosition(60px, -120px, "0", "0");
 }
+.img2 {
+  @include imagePosition(0, -40px, "0", "0");
+}
+// .img3 {
+//   position: absolute;
+//   right: 120;
+// }
+// .img4 {
+//   position: absolute;
+//   right: 120;
+// }

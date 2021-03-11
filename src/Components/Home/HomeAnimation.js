@@ -8,6 +8,7 @@ import img4 from "../../Images/Primary button-4.png";
 import img5 from "../../Images/Primary button-5.png";
 import img6 from "../../Images/Primary button-6.png";
 import img7 from "../../Images/Primary button.png";
+import "./Home.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {
