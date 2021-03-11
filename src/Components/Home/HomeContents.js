@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     width: "41px",
     height: "41px",
     margin: "0 35px",
+    cursor: "pointer",
   },
 }));
 

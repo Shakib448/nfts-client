@@ -1,5 +1,4 @@
 import { Box, makeStyles, Grid, Button } from "@material-ui/core";
-import React from "react";
 import clsx from "clsx";
 import img from "../../Images/robot.png";
 import "./Home.scss";
@@ -33,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 const HomeAnimation = () => {
   const classes = useStyles();
+
   return (
     <>
       <Box variant="div" className={clsx(classes.root)}>
@@ -40,7 +40,7 @@ const HomeAnimation = () => {
           <img src={img} alt="primary" className={clsx(classes.img)} />
         </Grid>
         <Grid item container justify="center">
-          <Button className={clsx(classes.linkBtn)} variant="primary">
+          <Button className={clsx(classes.linkBtn)} variant="contained">
             https://nfts.bio/Joe
           </Button>
         </Grid>
