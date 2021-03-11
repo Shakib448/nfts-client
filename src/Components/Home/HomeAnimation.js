@@ -11,7 +11,6 @@ import img7 from "../../Images/Primary button.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
     position: "relative",
   },
 }));
@@ -22,8 +21,8 @@ const HomeAnimation = () => {
     <>
       <Box variant="div" className={clsx(classes.root)}>
         {animImage.map((item, index) => (
-          <Grid item key={index}>
-            <img src={item.img} alt="primary" className={item.class} />
+          <Grid item key={index} className={item.class}>
+            <img src={item.img} alt="primary" />
           </Grid>
         ))}
       </Box>
