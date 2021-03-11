@@ -22,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 35px",
     cursor: "pointer",
   },
+  title: {
+    fontWeight: "bold",
+    marginBottom: "5px",
+  },
 }));
 
 const HomeContents = () => {
@@ -29,7 +33,7 @@ const HomeContents = () => {
   return (
     <Box>
       <Grid container justify="center">
-        <Typography variant="h3" gutterBottom>
+        <Typography variant="h3" className={clsx(classes.title)}>
           NFTs Bio Link
         </Typography>
       </Grid>
