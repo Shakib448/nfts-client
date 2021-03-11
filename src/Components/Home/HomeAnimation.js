@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(4),
     paddingBottom: theme.spacing(2),
     [theme.breakpoints.down("md")]: {
-      marginTop: "100px",
+      marginTop: "80px",
     },
   },
   img: {
