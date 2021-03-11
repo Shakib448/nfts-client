@@ -21,11 +21,11 @@ const HomeAnimation = () => {
   return (
     <>
       <Box variant="div" className={clsx(classes.root)}>
-        {animImage.map((item, index) => (
-          <Grid item key={index} className={item.class}>
+        {/* {animImage.map((item, index) => ( */}
+        {/* <Grid item key={index} className={item.class}>
             <img src={item.img} alt="primary" />
-          </Grid>
-        ))}
+          </Grid> */}
+        {/* ))} */}
       </Box>
     </>
   );

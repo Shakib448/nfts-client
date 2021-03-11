@@ -94,7 +94,6 @@ const Home = () => {
             sm={12}
             xs={12}
           >
-            <span></span>
             <HomeContents />
           </Grid>
         </Grid>
