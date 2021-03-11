@@ -13,6 +13,7 @@ import twitter from "../../Images/twitter 1.png";
 import telegram from "../../Images/telegram 1.png";
 import linkedin from "../../Images/linkedin 1.png";
 import "./Home.scss";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,10 +63,20 @@ const Home = () => {
   return (
     <>
       <Box variant="div" className={clsx(classes.ellipse1)}>
-        <img src={ellipse1} alt="top left" className={clsx(classes.img)} />
+        <motion.div
+          animate={{ scale: [1, 2, 2, 1, 1] }}
+          transition={{ duration: 5, yoyo: Infinity }}
+        >
+          <img src={ellipse1} alt="top left" className={clsx(classes.img)} />
+        </motion.div>
       </Box>
       <Box variant="div" className={classes.ellipse2}>
-        <img src={ellipse2} alt="top left" className={clsx(classes.img)} />
+        <motion.div
+          animate={{ scale: [1, 2, 2, 1, 1] }}
+          transition={{ duration: 5, yoyo: Infinity }}
+        >
+          <img src={ellipse2} alt="top left" className={clsx(classes.img)} />
+        </motion.div>
       </Box>
       <Container>
         <Grid container direction="row" className={clsx(classes.root)}>

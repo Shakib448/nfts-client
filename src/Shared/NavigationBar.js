@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 20,
     background: "linear-gradient(45deg, #DAC3FC 30%, #97C5FC 90%)",
     textTransform: "none",
+    boxShadow: "0px 12px 25px 5px rgba(142, 197, 252, 0.5)",
     [theme.breakpoints.down("md")]: {
       fontSize: 17,
     },
