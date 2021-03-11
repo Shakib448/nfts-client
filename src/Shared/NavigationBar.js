@@ -5,6 +5,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { Grid } from "@material-ui/core";
 import logo from "../Images/logo.png";
+import clsx from "clsx";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,32 +52,42 @@ const NavigationBar = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed" color="transparent" className={classes.appBar}>
-        <Toolbar className={classes.toolBar}>
+    <div className={clsx(classes.root)}>
+      <AppBar
+        position="fixed"
+        color="transparent"
+        className={clsx(classes.appBar)}
+      >
+        <Toolbar className={clsx(classes.toolBar)}>
           <Grid container justify="flex-start">
             <img src={logo} alt="logo" />
           </Grid>
           <Grid container justify="center">
-            <Button className={classes.menuButton} color="inherit">
+            <Button className={clsx(classes.menuButton)} color="inherit">
               Home
             </Button>
-            <Button className={classes.menuButton} color="inherit">
+            <Button className={clsx(classes.menuButton)} color="inherit">
               About
             </Button>
-            <Button className={classes.menuButton} color="inherit">
+            <Button className={clsx(classes.menuButton)} color="inherit">
               Contact
             </Button>
           </Grid>
 
           <Grid container justify="flex-end">
-            <Button className={classes.menuButton} color="inherit">
+            <Button className={clsx(classes.menuButton)} color="inherit">
               Login
             </Button>
             <Button
-              className={classes.signUp}
+              className={clsx(classes.signUp)}
               color="inherit"
               variant="contained"
+              component={motion.div}
+              whileHover={{
+                scale: 1.2,
+                transition: { duration: 0.3 },
+              }}
+              whileTap={{ scale: 0.9 }}
             >
               Signup
             </Button>

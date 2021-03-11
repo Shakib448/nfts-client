@@ -62,21 +62,23 @@ const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <Box variant="div" className={clsx(classes.ellipse1)}>
-        <motion.div
-          animate={{ scale: [1, 2, 2, 1, 1] }}
-          transition={{ duration: 5, yoyo: Infinity }}
-        >
-          <img src={ellipse1} alt="top left" className={clsx(classes.img)} />
-        </motion.div>
+      <Box
+        variant="div"
+        component={motion.div}
+        animate={{ scale: [1, 2, 2, 1, 1] }}
+        transition={{ duration: 5, repeat: Infinity }}
+        className={clsx(classes.ellipse1)}
+      >
+        <img src={ellipse1} alt="top left" className={clsx(classes.img)} />
       </Box>
-      <Box variant="div" className={classes.ellipse2}>
-        <motion.div
-          animate={{ scale: [1, 2, 2, 1, 1] }}
-          transition={{ duration: 5, yoyo: Infinity }}
-        >
-          <img src={ellipse2} alt="top left" className={clsx(classes.img)} />
-        </motion.div>
+      <Box
+        variant="div"
+        component={motion.div}
+        animate={{ scale: [1, 2, 2, 1, 1] }}
+        transition={{ duration: 5, repeat: Infinity }}
+        className={classes.ellipse2}
+      >
+        <img src={ellipse2} alt="top left" className={clsx(classes.img)} />
       </Box>
       <Container>
         <Grid container direction="row" className={clsx(classes.root)}>
