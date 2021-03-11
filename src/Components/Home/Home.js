@@ -1,18 +1,12 @@
-import {
-  Box,
-  Container,
-  Grid,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Box, Container, Grid, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
 import ellipse1 from "../../Images/Ellipse 18.png";
 import ellipse2 from "../../Images/Ellipse 19.png";
-import twitter from "../../Images/twitter 1.png";
-import telegram from "../../Images/telegram 1.png";
-import linkedin from "../../Images/linkedin 1.png";
+import { motion } from "framer-motion";
+import HomeContents from "./HomeContents";
 import "./Home.scss";
+import HomeAnimation from "./HomeAnimation";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,31 +34,38 @@ const useStyles = makeStyles((theme) => ({
     width: "205px",
     height: "52px",
   },
-  fonts: {
-    fontStyle: "normal",
-    fontWeight: "bold",
-    fontSize: "24px",
-    lineHeight: "28px",
-    color: "#999999",
-  },
-  icon: {
-    width: "41px",
-    height: "41px",
-    margin: "0 35px",
-  },
-  iconContentArea: {
-    margin: "20px 0",
-  },
 }));
+
+const imgAnimation = {
+  anim: {
+    scale: [1, 2, 2, 1, 1],
+    transition: {
+      duration: 5,
+      repeat: Infinity,
+    },
+  },
+};
 
 const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <Box variant="div" className={clsx(classes.ellipse1)}>
+      <Box
+        variant="div"
+        component={motion.div}
+        variants={imgAnimation}
+        animate="anim"
+        className={clsx(classes.ellipse1)}
+      >
         <img src={ellipse1} alt="top left" className={clsx(classes.img)} />
       </Box>
-      <Box variant="div" className={classes.ellipse2}>
+      <Box
+        variant="div"
+        component={motion.div}
+        variants={imgAnimation}
+        animate="anim"
+        className={classes.ellipse2}
+      >
         <img src={ellipse2} alt="top left" className={clsx(classes.img)} />
       </Box>
       <Container>
@@ -79,7 +80,10 @@ const Home = () => {
             sm={12}
             xs={12}
           >
-            <Grid container justify="flex-start"></Grid>
+            <Grid container justify="center">
+              <span></span>
+              <HomeAnimation />
+            </Grid>
           </Grid>
           <Grid
             container
@@ -91,54 +95,7 @@ const Home = () => {
             sm={12}
             xs={12}
           >
-            <Box>
-              <Grid container justify="center">
-                <Typography variant="h3">NFTs Bio Link</Typography>
-              </Grid>
-              <Grid container justify="center">
-                <Typography
-                  variant="h6"
-                  className={clsx(classes.fonts)}
-                  gutterBottom
-                >
-                  One link to show ‘em all
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  className="home__gradient"
-                  gutterBottom
-                >
-                  NFTs bio is the only link you need. Stop spamming and start
-                  building your brand with one memorable URL. Create a beautiful
-                  profile to connect with your audience, showcase the NFT
-                  collections, or just to show off your favorite collectible.
-                  NFTs bio takes less than a minute to setup. It's easy to use,
-                  fun to share and free forever!
-                </Typography>
-              </Grid>
-              <Grid
-                container
-                justify="center"
-                alignItems="center"
-                className={clsx(classes.iconContentArea)}
-              >
-                <img
-                  src={twitter}
-                  alt="twitter"
-                  className={clsx(classes.icon)}
-                />
-                <img
-                  src={telegram}
-                  alt="telegram"
-                  className={clsx(classes.icon)}
-                />
-                <img
-                  src={linkedin}
-                  alt="linkedin"
-                  className={clsx(classes.icon)}
-                />
-              </Grid>
-            </Box>
+            <HomeContents />
           </Grid>
         </Grid>
       </Container>

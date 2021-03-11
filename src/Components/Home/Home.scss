@@ -1,3 +1,11 @@
+@mixin imagePosition($top, $right, $left, $bottom) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
 .home__gradient {
   font-family: Roboto;
   font-style: normal;
@@ -9,3 +17,18 @@
   -webkit-text-fill-color: transparent;
   width: 70%;
 }
+
+.img1 {
+  @include imagePosition(60px, -120px, "0", "0");
+}
+.img2 {
+  @include imagePosition(0, -40px, "0", "0");
+}
+// .img3 {
+//   position: absolute;
+//   right: 120;
+// }
+// .img4 {
+//   position: absolute;
+//   right: 120;
+// }
