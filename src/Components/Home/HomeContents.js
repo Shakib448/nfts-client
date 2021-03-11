@@ -22,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 35px",
     cursor: "pointer",
   },
+  title: {
+    fontWeight: "bold",
+    marginBottom: "5px",
+  },
 }));
 
 const HomeContents = () => {
@@ -29,12 +33,14 @@ const HomeContents = () => {
   return (
     <Box>
       <Grid container justify="center">
-        <Typography variant="h3">NFTs Bio Link</Typography>
+        <Typography variant="h3" className={clsx(classes.title)}>
+          NFTs Bio Link
+        </Typography>
       </Grid>
       <Grid container justify="center">
-        <Typography variant="h6" className={clsx(classes.fonts)} gutterBottom>
+        {/* <Typography variant="h6" className={clsx(classes.fonts)} gutterBottom>
           One link to show ‘em all
-        </Typography>
+        </Typography> */}
         <Typography variant="subtitle1" className="home__gradient" gutterBottom>
           NFTs bio is the only link you need. Stop spamming and start building
           your brand with one memorable URL. Create a beautiful profile to
