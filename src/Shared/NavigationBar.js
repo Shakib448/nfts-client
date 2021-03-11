@@ -6,7 +6,6 @@ import Button from "@material-ui/core/Button";
 import { Grid } from "@material-ui/core";
 import logo from "../Images/logo.png";
 import clsx from "clsx";
-import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -82,12 +81,6 @@ const NavigationBar = () => {
               className={clsx(classes.signUp)}
               color="inherit"
               variant="contained"
-              component={motion.div}
-              whileHover={{
-                scale: 1.2,
-                transition: { duration: 0.3 },
-              }}
-              whileTap={{ scale: 0.9 }}
             >
               Signup
             </Button>
