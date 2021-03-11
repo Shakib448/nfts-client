@@ -6,6 +6,7 @@ import ellipse2 from "../../Images/Ellipse 19.png";
 import { motion } from "framer-motion";
 import HomeContents from "./HomeContents";
 import "./Home.scss";
+import HomeAnimation from "./HomeAnimation";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,7 +80,9 @@ const Home = () => {
             sm={12}
             xs={12}
           >
-            <Grid container justify="flex-start"></Grid>
+            <Grid container justify="center">
+              <HomeAnimation />
+            </Grid>
           </Grid>
           <Grid
             container
