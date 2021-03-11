@@ -1,9 +1,21 @@
 body {
   margin: 0;
-  overflow: hidden;
+  font-family: "Roboto", sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media (max-width: 960px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    overflow: hidden;
+  }
 }

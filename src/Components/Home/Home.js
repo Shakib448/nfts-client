@@ -81,6 +81,7 @@ const Home = () => {
             xs={12}
           >
             <Grid container justify="center">
+              <span></span>
               <HomeAnimation />
             </Grid>
           </Grid>
@@ -94,6 +95,7 @@ const Home = () => {
             sm={12}
             xs={12}
           >
+            <span></span>
             <HomeContents />
           </Grid>
         </Grid>
