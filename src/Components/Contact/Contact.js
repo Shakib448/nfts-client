@@ -18,16 +18,19 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
     padding: theme.spacing(6),
   },
-  loginArea: {
+  contactArea: {
     padding: theme.spacing(4),
     background: "#fff",
     boxShadow: "5px 5px 50px lightgray",
+    [theme.breakpoints.up("lg")]: {
+      marginTop: theme.spacing(4),
+    },
   },
   formControl: {
     margin: theme.spacing(1),
   },
   form: { marginTop: theme.spacing(2), marginBottom: theme.spacing(2) },
-  loginBtn: {
+  send: {
     borderRadius: "25px",
     fontSize: 20,
     padding: theme.spacing(1),
@@ -58,7 +61,7 @@ const containerVariants = {
   exit: { x: "-100vw", transition: { ease: "easeInOut" } },
 };
 
-const Login = () => {
+const Contact = () => {
   const classes = useStyles();
   return (
     <Container>
@@ -69,7 +72,7 @@ const Login = () => {
         className={clsx(classes.root)}
       >
         <Grid
-          className={clsx(classes.loginArea)}
+          className={clsx(classes.contactArea)}
           container
           item
           md={6}
@@ -83,30 +86,30 @@ const Login = () => {
           animate="visible"
           exit="exit"
         >
-          <Typography align="center" variant="h3">
-            Welcome Back!
+          <Typography align="left" variant="h4">
+            Contact Us
           </Typography>
           <FormGroup className={clsx(classes.formControl)}>
+            <FormControl className={clsx(classes.form)}>
+              <TextField id="outlined-basic" label="Name" variant="outlined" />
+            </FormControl>
             <FormControl className={clsx(classes.form)}>
               <TextField id="outlined-basic" label="Email" variant="outlined" />
             </FormControl>
             <FormControl className={clsx(classes.form)}>
               <TextField
                 id="outlined-basic"
-                label="Password"
+                label="What's on your mind?"
                 variant="outlined"
-                type="password"
+                multiline
+                rows={4}
+                rowsMax={8}
               />
             </FormControl>
-            <Grid container justify="flex-end">
-              <Typography variant="subtitle1" className={clsx(classes.forget)}>
-                Forgot Password?
-              </Typography>
-            </Grid>
           </FormGroup>
           <Grid container justify="center">
-            <Button variant="contained" className={clsx(classes.loginBtn)}>
-              Login
+            <Button variant="contained" className={clsx(classes.send)}>
+              Send
             </Button>
           </Grid>
         </Grid>
@@ -115,4 +118,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Contact;

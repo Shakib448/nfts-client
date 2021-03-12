@@ -21,8 +21,8 @@ export const Navigation = () => (
 
 const routesName = [
   { route: "Home", to: "/" },
-  { route: "About" },
-  { route: "Contact" },
+  { route: "About", to: "/about" },
+  { route: "Contact", to: "/contact" },
   { route: "Login", to: "/login" },
   { route: "Signup", to: "/sign-up" },
 ];
