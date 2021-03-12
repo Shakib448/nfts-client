@@ -51,8 +51,8 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     width: "100%",
-    height: "488px",
-    marginTop: theme.spacing(3.5),
+    height: "486px",
+    marginTop: theme.spacing(3.85),
     [theme.breakpoints.down("md")]: {
       marginTop: theme.spacing(0),
       height: "480px",
