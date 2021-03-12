@@ -90,6 +90,8 @@ const NavigationBar = () => {
             </Button>
             <Button
               className={clsx(classes.signUp)}
+              component={NavLink}
+              to="/sing-up"
               color="inherit"
               variant="contained"
             >
