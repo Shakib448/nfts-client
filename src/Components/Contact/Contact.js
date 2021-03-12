@@ -11,23 +11,30 @@ import {
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
+import img from "../../Images/Rectangle 58.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     height: "100vh",
     padding: theme.spacing(6),
+    [theme.breakpoints.down("md")]: {
+      marginTop: theme.spacing(2),
+    },
   },
-  loginArea: {
+  contactArea: {
     padding: theme.spacing(4),
     background: "#fff",
     boxShadow: "5px 5px 50px lightgray",
+    [theme.breakpoints.up("lg")]: {
+      marginTop: theme.spacing(4),
+    },
   },
   formControl: {
     margin: theme.spacing(1),
   },
   form: { marginTop: theme.spacing(2), marginBottom: theme.spacing(2) },
-  loginBtn: {
+  send: {
     borderRadius: "25px",
     fontSize: 20,
     padding: theme.spacing(1),
@@ -41,6 +48,20 @@ const useStyles = makeStyles((theme) => ({
   },
   forget: {
     cursor: "pointer",
+  },
+  image: {
+    width: "100%",
+    height: "486px",
+    marginTop: theme.spacing(3.85),
+    [theme.breakpoints.down("md")]: {
+      marginTop: theme.spacing(0),
+      height: "480px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      //   transform: "rotate(90deg)",
+      display: "none",
+      marginTop: theme.spacing(2),
+    },
   },
 }));
 
@@ -58,7 +79,7 @@ const containerVariants = {
   exit: { x: "-100vw", transition: { ease: "easeInOut" } },
 };
 
-const Login = () => {
+const Contact = () => {
   const classes = useStyles();
   return (
     <Container>
@@ -66,10 +87,16 @@ const Login = () => {
         container
         justify="center"
         alignItems="center"
+        direction="row"
         className={clsx(classes.root)}
+        component={motion.div}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
       >
         <Grid
-          className={clsx(classes.loginArea)}
+          className={clsx(classes.contactArea)}
           container
           item
           md={6}
@@ -77,42 +104,40 @@ const Login = () => {
           sm={12}
           xs={12}
           direction="column"
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
         >
-          <Typography align="center" variant="h3">
-            Welcome Back!
+          <Typography align="left" variant="h4">
+            Contact Us
           </Typography>
           <FormGroup className={clsx(classes.formControl)}>
+            <FormControl className={clsx(classes.form)}>
+              <TextField id="outlined-basic" label="Name" variant="outlined" />
+            </FormControl>
             <FormControl className={clsx(classes.form)}>
               <TextField id="outlined-basic" label="Email" variant="outlined" />
             </FormControl>
             <FormControl className={clsx(classes.form)}>
               <TextField
                 id="outlined-basic"
-                label="Password"
+                label="What's on your mind?"
                 variant="outlined"
-                type="password"
+                multiline
+                rows={4}
+                rowsMax={8}
               />
             </FormControl>
-            <Grid container justify="flex-end">
-              <Typography variant="subtitle1" className={clsx(classes.forget)}>
-                Forgot Password?
-              </Typography>
-            </Grid>
           </FormGroup>
           <Grid container justify="center">
-            <Button variant="contained" className={clsx(classes.loginBtn)}>
-              Login
+            <Button variant="contained" className={clsx(classes.send)}>
+              Send
             </Button>
           </Grid>
+        </Grid>
+        <Grid container item md={6} lg={6} sm={12} xs={12}>
+          <img src={img} alt="rectangle58" className={clsx(classes.image)} />
         </Grid>
       </Grid>
     </Container>
   );
 };
 
-export default Login;
+export default Contact;

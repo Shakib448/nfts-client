@@ -101,19 +101,12 @@ const styles = (theme) => ({
       paddingLeft: "10px !important",
     },
     ".MuiInputLabel-animated": {
-      fontSize: "17px",
       fontWeight: "bold",
       fontFamily: "Lato, sans-serif ",
-      [theme.breakpoints.down("sm")]: {
-        fontSize: "12px",
-      },
     },
     ".MuiInputLabel-outlined": {
       fontWeight: "bold",
       fontFamily: "Roboto, sans-serif ",
-      [theme.breakpoints.down("sm")]: {
-        fontSize: "12px",
-      },
     },
     ".MuiButton-containedPrimary": {
       fontFamily: "Lato, sans-serif ",

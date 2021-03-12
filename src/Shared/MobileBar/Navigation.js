@@ -20,9 +20,9 @@ export const Navigation = () => (
 );
 
 const routesName = [
-  { route: "Home" },
-  { route: "About" },
-  { route: "Contact" },
-  { route: "Login" },
-  { route: "Signup" },
+  { route: "Home", to: "/" },
+  { route: "About", to: "/about" },
+  { route: "Contact", to: "/contact" },
+  { route: "Login", to: "/login" },
+  { route: "Signup", to: "/sign-up" },
 ];
