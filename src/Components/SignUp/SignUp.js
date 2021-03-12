@@ -4,13 +4,18 @@ import {
   FormControl,
   FormGroup,
   Grid,
+  IconButton,
+  InputAdornment,
+  InputLabel,
   makeStyles,
+  OutlinedInput,
   TextField,
   Typography,
 } from "@material-ui/core";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -69,6 +74,8 @@ const containerVariants = {
 
 const SingUp = () => {
   const classes = useStyles();
+
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <Container>
       <Grid
@@ -99,11 +106,26 @@ const SingUp = () => {
             <FormControl className={clsx(classes.form)}>
               <TextField id="outlined-basic" label="Email" variant="outlined" />
             </FormControl>
-            <FormControl className={clsx(classes.form)}>
-              <TextField
-                id="outlined-basic"
-                label="Password"
-                variant="outlined"
+            <FormControl className={clsx(classes.form)} variant="outlined">
+              <InputLabel htmlFor="outlined-adornment-password">
+                Password
+              </InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-password"
+                type={showPassword ? "text" : "password"}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={() => setShowPassword(!showPassword)}
+                      edge="end"
+                    >
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
+                      {/* Show */}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                labelWidth={75}
               />
             </FormControl>
           </FormGroup>
