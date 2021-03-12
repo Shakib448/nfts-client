@@ -1,8 +1,11 @@
 import {
   Container,
+  FormControl,
+  FormGroup,
   Grid,
   makeStyles,
   Paper,
+  TextField,
   Typography,
 } from "@material-ui/core";
 import clsx from "clsx";
@@ -40,15 +43,40 @@ const Login = () => {
         alignItems="center"
         className={clsx(classes.root)}
       >
-        <Paper
+        <Grid
+          container
+          item
+          md={6}
+          lg={6}
+          sm={12}
+          xs={12}
+          direction="column"
           component={motion.div}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           exit="exit"
         >
-          <Typography variant="h3">Welcome Back</Typography>
-        </Paper>
+          <Typography align="center" variant="h3">
+            Welcome Back
+          </Typography>
+          <FormGroup>
+            <FormControl>
+              <TextField
+                id="outlined-basic"
+                label="Outlined"
+                variant="outlined"
+              />
+            </FormControl>
+            <FormControl>
+              <TextField
+                id="outlined-basic"
+                label="Outlined"
+                variant="outlined"
+              />
+            </FormControl>
+          </FormGroup>
+        </Grid>
       </Grid>
     </Container>
   );
