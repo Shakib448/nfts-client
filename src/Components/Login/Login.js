@@ -1,6 +1,20 @@
-import { Container, Paper, Typography } from "@material-ui/core";
+import {
+  Container,
+  Grid,
+  makeStyles,
+  Paper,
+  Typography,
+} from "@material-ui/core";
+import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    height: "100vh",
+  },
+}));
 
 const containerVariants = {
   hidden: {
@@ -17,17 +31,25 @@ const containerVariants = {
 };
 
 const Login = () => {
+  const classes = useStyles();
   return (
     <Container>
-      <Paper
-        component={motion.div}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
+      <Grid
+        container
+        justify="center"
+        alignItems="center"
+        className={clsx(classes.root)}
       >
-        <Typography variant="h3">Welcome Back</Typography>
-      </Paper>
+        <Paper
+          component={motion.div}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+        >
+          <Typography variant="h3">Welcome Back</Typography>
+        </Paper>
+      </Grid>
     </Container>
   );
 };
