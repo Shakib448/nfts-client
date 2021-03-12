@@ -11,12 +11,16 @@ import {
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
+import img from "../../Images/Rectangle 58.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     height: "100vh",
     padding: theme.spacing(6),
+    [theme.breakpoints.down("md")]: {
+      marginTop: theme.spacing(2),
+    },
   },
   contactArea: {
     padding: theme.spacing(4),
@@ -45,6 +49,20 @@ const useStyles = makeStyles((theme) => ({
   forget: {
     cursor: "pointer",
   },
+  image: {
+    width: "100%",
+    height: "488px",
+    marginTop: theme.spacing(3.5),
+    [theme.breakpoints.down("md")]: {
+      marginTop: theme.spacing(0),
+      height: "480px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      //   transform: "rotate(90deg)",
+      display: "none",
+      marginTop: theme.spacing(2),
+    },
+  },
 }));
 
 const containerVariants = {
@@ -69,7 +87,13 @@ const Contact = () => {
         container
         justify="center"
         alignItems="center"
+        direction="row"
         className={clsx(classes.root)}
+        component={motion.div}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
       >
         <Grid
           className={clsx(classes.contactArea)}
@@ -80,11 +104,6 @@ const Contact = () => {
           sm={12}
           xs={12}
           direction="column"
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
         >
           <Typography align="left" variant="h4">
             Contact Us
@@ -112,6 +131,9 @@ const Contact = () => {
               Send
             </Button>
           </Grid>
+        </Grid>
+        <Grid container item md={6} lg={6} sm={12} xs={12}>
+          <img src={img} alt="rectangle58" className={clsx(classes.image)} />
         </Grid>
       </Grid>
     </Container>
