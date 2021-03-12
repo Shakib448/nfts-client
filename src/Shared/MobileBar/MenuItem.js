@@ -1,6 +1,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { Button, makeStyles } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const variants = {
   open: {
@@ -34,7 +35,9 @@ export const MenuItem = ({ item }) => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        <Button className={classes.menuButton}>{item.route}</Button>
+        <Button className={classes.menuButton} component={Link} to={item.to}>
+          {item.route}
+        </Button>
       </motion.li>
     </>
   );

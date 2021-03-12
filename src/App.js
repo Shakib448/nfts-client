@@ -25,7 +25,7 @@ function App() {
         <Switch location={location} key={location.key}>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/sing-up" component={SingUp} />
+          <Route exact path="/sign-up" component={SingUp} />
         </Switch>
       </AnimatePresence>
     </MuiThemeProvider>
