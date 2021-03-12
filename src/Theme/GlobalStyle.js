@@ -6,7 +6,7 @@ const styles = (theme) => ({
       outline: 0,
     },
     "h1,h2,h3,h4,h5,h6": {
-      fontFamily: "'Roboto', sans-serif;",
+      fontFamily: "Roboto, sans-serif",
       fontWeight: "bold",
     },
     "h1, h2": {
@@ -109,8 +109,8 @@ const styles = (theme) => ({
       },
     },
     ".MuiInputLabel-outlined": {
-      fontSize: "15px",
       fontWeight: "bold",
+      fontFamily: "Roboto, sans-serif ",
       [theme.breakpoints.down("sm")]: {
         fontSize: "12px",
       },
