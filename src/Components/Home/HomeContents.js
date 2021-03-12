@@ -38,9 +38,6 @@ const HomeContents = () => {
         </Typography>
       </Grid>
       <Grid container justify="center">
-        {/* <Typography variant="h6" className={clsx(classes.fonts)} gutterBottom>
-          One link to show ‘em all
-        </Typography> */}
         <Typography variant="subtitle1" className="home__gradient" gutterBottom>
           NFTs bio is the only link you need. Stop spamming and start building
           your brand with one memorable URL. Create a beautiful profile to

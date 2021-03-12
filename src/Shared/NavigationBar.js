@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import { Grid } from "@material-ui/core";
 import logo from "../Images/logo.png";
 import clsx from "clsx";
+import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,7 +63,12 @@ const NavigationBar = () => {
             <img src={logo} alt="logo" />
           </Grid>
           <Grid container justify="center">
-            <Button className={clsx(classes.menuButton)} color="inherit">
+            <Button
+              component={NavLink}
+              to="/"
+              className={clsx(classes.menuButton)}
+              color="inherit"
+            >
               Home
             </Button>
             <Button className={clsx(classes.menuButton)} color="inherit">
@@ -74,7 +80,12 @@ const NavigationBar = () => {
           </Grid>
 
           <Grid container justify="flex-end">
-            <Button className={clsx(classes.menuButton)} color="inherit">
+            <Button
+              component={NavLink}
+              to="/login"
+              className={clsx(classes.menuButton)}
+              color="inherit"
+            >
               Login
             </Button>
             <Button
