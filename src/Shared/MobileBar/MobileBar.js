@@ -37,7 +37,7 @@ export const MobileBar = () => {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      className="mobileBar__nav"
+      className={`${isOpen ? "mobileBar__nav" : "mobileBar__nav-show"}`}
     >
       <motion.div className="background" variants={sidebar} />
       <Navigation />
