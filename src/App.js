@@ -3,25 +3,29 @@ import Theme from "./Theme/Theme";
 import { CssBaseline, MuiThemeProvider } from "@material-ui/core";
 import GlobalStyles from "./Theme/GlobalStyle";
 import { MobileBar } from "./Shared/MobileBar/MobileBar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Switch, Route, useLocation } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import ParticlesJs from "./Theme/ParticlesJs";
 import "./App.scss";
+import Login from "./Components/Login/Login";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   return (
     <MuiThemeProvider theme={Theme}>
       <CssBaseline />
       <GlobalStyles />
       <ParticlesJs />
 
-      <Router>
-        <NavigationBar />
-        <MobileBar />
-        <Switch>
+      <NavigationBar />
+      <MobileBar />
+      <AnimatePresence exitBeforeEnter initial={false}>
+        <Switch location={location} key={location.key}>
           <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
         </Switch>
-      </Router>
+      </AnimatePresence>
     </MuiThemeProvider>
   );
 }
