@@ -58,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
       height: "480px",
     },
     [theme.breakpoints.down("sm")]: {
-      //   transform: "rotate(90deg)",
       display: "none",
       marginTop: theme.spacing(2),
     },
