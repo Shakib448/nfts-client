@@ -59,7 +59,7 @@ const NavigationBar = () => {
         className={clsx(classes.appBar)}
       >
         <Toolbar className={clsx(classes.toolBar)}>
-          <Grid container justify="flex-start">
+          <Grid container justify="flex-start" component={NavLink} to="/">
             <img src={logo} alt="logo" />
           </Grid>
           <Grid container justify="center">
