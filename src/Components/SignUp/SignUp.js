@@ -121,7 +121,6 @@ const SingUp = () => {
                       edge="end"
                     >
                       {showPassword ? <Visibility /> : <VisibilityOff />}
-                      {/* Show */}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -139,7 +138,6 @@ const SingUp = () => {
               Already Have an account?
               <u>
                 <Link to="/login" className={clsx(classes.link)}>
-                  {" "}
                   Signin
                 </Link>
               </u>
