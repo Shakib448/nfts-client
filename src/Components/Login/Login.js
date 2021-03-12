@@ -39,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 17,
     },
   },
+  forget: {
+    cursor: "pointer",
+  },
 }));
 
 const containerVariants = {
@@ -95,7 +98,9 @@ const Login = () => {
               />
             </FormControl>
             <Grid container justify="flex-end">
-              <Typography variant="subtitle1">Forgot Password?</Typography>
+              <Typography variant="subtitle1" className={clsx(classes.forget)}>
+                Forgot Password?
+              </Typography>
             </Grid>
           </FormGroup>
           <Grid container justify="center">
