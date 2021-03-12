@@ -8,14 +8,16 @@ code {
     monospace;
 }
 
-@media (max-width: 960px) {
-  body {
-    // overflow-x: hidden;
-  }
-}
+// @media (max-width: 960px) {
+//   body {
+//     overflow-x: hidden;
+//     z-index: 9999;
+//   }
+// }
 
-@media (min-width: 992px) {
-  body {
-    // overflow: hidden;
-  }
-}
+// @media (min-width: 992px) {
+//   body {
+//     overflow: hidden;
+//     z-index: 9999;
+//   }
+// }
