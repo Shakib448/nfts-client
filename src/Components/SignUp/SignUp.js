@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(4),
     background: "#fff",
     boxShadow: "5px 5px 50px lightgray",
+    borderRadius: "40px",
   },
   formControl: {
     margin: theme.spacing(1),
