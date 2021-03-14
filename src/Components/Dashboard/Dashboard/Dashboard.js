@@ -10,6 +10,11 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
     position: "relative",
     overflow: "hidden",
+    [theme.breakpoints.down("md")]: {
+      overflowY: "scroll",
+      display: "flex",
+      justifyContent: "center",
+    },
   },
 }));
 
