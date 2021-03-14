@@ -11,6 +11,7 @@ import Login from "./Components/Login/Login";
 import { AnimatePresence } from "framer-motion";
 import SingUp from "./Components/SignUp/SignUp";
 import Contact from "./Components/Contact/Contact";
+import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SingUp} />
+          <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
       </AnimatePresence>
     </MuiThemeProvider>

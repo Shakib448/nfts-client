@@ -71,8 +71,13 @@ const NavigationBar = () => {
             >
               Home
             </Button>
-            <Button className={clsx(classes.menuButton)} color="inherit">
-              About
+            <Button
+              component={NavLink}
+              to="/dashboard "
+              className={clsx(classes.menuButton)}
+              color="inherit"
+            >
+              Dashboard
             </Button>
             <Button
               className={clsx(classes.menuButton)}
