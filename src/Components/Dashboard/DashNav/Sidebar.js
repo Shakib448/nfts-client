@@ -1,20 +1,6 @@
-import {
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  // makeStyles,
-} from "@material-ui/core";
+import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import { motion } from "framer-motion";
-// import clsx from "clsx";
 import React from "react";
-
-// const useStyles = makeStyles((theme) => ({
-//   fonts: {
-//     fontSize: 18,
-//     fontWeight: "bold",
-//   },
-// }));
 
 const containerVariants = {
   hidden: {
@@ -31,7 +17,6 @@ const containerVariants = {
 };
 
 const Sidebar = () => {
-  // const classes = useStyles();
   return (
     <motion.div
       variants={containerVariants}
