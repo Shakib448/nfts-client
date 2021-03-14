@@ -29,6 +29,11 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(2),
     textTransform: "none",
     fontSize: 18,
+    borderRadius: "15px",
+  },
+  img: {
+    width: "25px",
+    height: "20px",
   },
 }));
 
@@ -64,7 +69,9 @@ const Collections = () => {
         <Button
           variant="outlined"
           className={clsx(classes.collectionsBtn)}
-          startIcon={<img src={btnIcon} alt="fileIcon" />}
+          startIcon={
+            <img src={btnIcon} alt="fileIcon" className={clsx(classes.img)} />
+          }
         >
           New Collection
         </Button>
