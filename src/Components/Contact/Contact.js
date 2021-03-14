@@ -12,6 +12,8 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
 import img from "../../Images/Rectangle 58.png";
+import { MobileBar } from "../../Shared/MobileBar/MobileBar";
+import NavigationBar from "../../Shared/NavigationBar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -86,61 +88,73 @@ const containerVariants = {
 const Contact = () => {
   const classes = useStyles();
   return (
-    <Container>
-      <Grid
-        container
-        justify="center"
-        alignItems="center"
-        direction="row"
-        className={clsx(classes.root)}
-        component={motion.div}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-      >
+    <>
+      <NavigationBar />
+      <MobileBar />
+      <Container>
         <Grid
-          className={clsx(classes.contactArea)}
           container
-          item
-          md={6}
-          lg={6}
-          sm={12}
-          xs={12}
-          direction="column"
+          justify="center"
+          alignItems="center"
+          direction="row"
+          className={clsx(classes.root)}
+          component={motion.div}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
         >
-          <Typography align="left" variant="h4">
-            Contact Us
-          </Typography>
-          <FormGroup className={clsx(classes.formControl)}>
-            <FormControl className={clsx(classes.form)}>
-              <TextField id="outlined-basic" label="Name" variant="outlined" />
-            </FormControl>
-            <FormControl className={clsx(classes.form)}>
-              <TextField id="outlined-basic" label="Email" variant="outlined" />
-            </FormControl>
-            <FormControl className={clsx(classes.form)}>
-              <TextField
-                id="outlined-basic"
-                label="What's on your mind?"
-                variant="outlined"
-                multiline
-                rows={4}
-                rowsMax={8}
-              />
-            </FormControl>
-          </FormGroup>
-          <Grid container justify="center">
-            <Button variant="contained" className={clsx(classes.send)}>
-              Send
-            </Button>
+          <Grid
+            className={clsx(classes.contactArea)}
+            container
+            item
+            md={6}
+            lg={6}
+            sm={12}
+            xs={12}
+            direction="column"
+          >
+            <Typography align="left" variant="h4">
+              Contact Us
+            </Typography>
+            <FormGroup className={clsx(classes.formControl)}>
+              <FormControl className={clsx(classes.form)}>
+                <TextField
+                  id="outlined-basic"
+                  label="Name"
+                  variant="outlined"
+                />
+              </FormControl>
+              <FormControl className={clsx(classes.form)}>
+                <TextField
+                  id="outlined-basic"
+                  label="Email"
+                  variant="outlined"
+                />
+              </FormControl>
+              <FormControl className={clsx(classes.form)}>
+                <TextField
+                  id="outlined-basic"
+                  label="What's on your mind?"
+                  variant="outlined"
+                  multiline
+                  rows={4}
+                  rowsMax={8}
+                />
+              </FormControl>
+            </FormGroup>
+            <Grid container justify="center">
+              <Button variant="contained" className={clsx(classes.send)}>
+                Send
+              </Button>
+            </Grid>
+          </Grid>
+          <Grid container item md={6} lg={6} sm={12} xs={12}>
+            <img src={img} alt="rectangle58" className={clsx(classes.image)} />
           </Grid>
         </Grid>
-        <Grid container item md={6} lg={6} sm={12} xs={12}>
-          <img src={img} alt="rectangle58" className={clsx(classes.image)} />
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </>
   );
 };
 

@@ -1,8 +1,6 @@
-import NavigationBar from "./Shared/NavigationBar";
 import Theme from "./Theme/Theme";
 import { CssBaseline, MuiThemeProvider } from "@material-ui/core";
 import GlobalStyles from "./Theme/GlobalStyle";
-import { MobileBar } from "./Shared/MobileBar/MobileBar";
 import { BrowserRouter as Switch, Route, useLocation } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import ParticlesJs from "./Theme/ParticlesJs";
@@ -21,8 +19,6 @@ function App() {
       <GlobalStyles />
       <ParticlesJs />
 
-      <NavigationBar />
-      <MobileBar />
       <AnimatePresence exitBeforeEnter initial={false}>
         <Switch location={location} key={location.key}>
           <Route exact path="/" component={Home} />

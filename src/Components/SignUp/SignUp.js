@@ -17,6 +17,8 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { MobileBar } from "../../Shared/MobileBar/MobileBar";
+import NavigationBar from "../../Shared/NavigationBar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -78,75 +80,83 @@ const SingUp = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <Container>
-      <Grid
-        container
-        justify="center"
-        alignItems="center"
-        className={clsx(classes.root)}
-      >
+    <>
+      <NavigationBar />
+      <MobileBar />
+      <Container>
         <Grid
-          className={clsx(classes.singUpArea)}
           container
-          item
-          md={6}
-          lg={6}
-          sm={12}
-          xs={12}
-          direction="column"
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
+          justify="center"
+          alignItems="center"
+          className={clsx(classes.root)}
         >
-          <Typography align="center" variant="h3">
-            Welcome
-          </Typography>
-          <FormGroup className={clsx(classes.formControl)}>
-            <FormControl className={clsx(classes.form)}>
-              <TextField id="outlined-basic" label="Email" variant="outlined" />
-            </FormControl>
-            <FormControl className={clsx(classes.form)} variant="outlined">
-              <InputLabel htmlFor="outlined-adornment-password">
-                Password
-              </InputLabel>
-              <OutlinedInput
-                id="outlined-adornment-password"
-                type={showPassword ? "text" : "password"}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={() => setShowPassword(!showPassword)}
-                      edge="end"
-                    >
-                      {showPassword ? <Visibility /> : <VisibilityOff />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-                labelWidth={75}
-              />
-            </FormControl>
-          </FormGroup>
-          <Grid container justify="center">
-            <Button variant="contained" className={clsx(classes.singUpBtn)}>
-              Register
-            </Button>
-          </Grid>
-          <Grid container justify="center">
-            <Typography variant="subtitle1" className={clsx(classes.account)}>
-              Already Have an account?
-              <u>
-                <Link to="/login" className={clsx(classes.link)}>
-                  Signin
-                </Link>
-              </u>
+          <Grid
+            className={clsx(classes.singUpArea)}
+            container
+            item
+            md={6}
+            lg={6}
+            sm={12}
+            xs={12}
+            direction="column"
+            component={motion.div}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <Typography align="center" variant="h3">
+              Welcome
             </Typography>
+            <FormGroup className={clsx(classes.formControl)}>
+              <FormControl className={clsx(classes.form)}>
+                <TextField
+                  id="outlined-basic"
+                  label="Email"
+                  variant="outlined"
+                />
+              </FormControl>
+              <FormControl className={clsx(classes.form)} variant="outlined">
+                <InputLabel htmlFor="outlined-adornment-password">
+                  Password
+                </InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-password"
+                  type={showPassword ? "text" : "password"}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={() => setShowPassword(!showPassword)}
+                        edge="end"
+                      >
+                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  labelWidth={75}
+                />
+              </FormControl>
+            </FormGroup>
+            <Grid container justify="center">
+              <Button variant="contained" className={clsx(classes.singUpBtn)}>
+                Register
+              </Button>
+            </Grid>
+            <Grid container justify="center">
+              <Typography variant="subtitle1" className={clsx(classes.account)}>
+                Already Have an account?
+                <u>
+                  <Link to="/login" className={clsx(classes.link)}>
+                    Signin
+                  </Link>
+                </u>
+              </Typography>
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </>
   );
 };
 

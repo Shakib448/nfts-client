@@ -11,6 +11,8 @@ import {
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
+import { MobileBar } from "../../Shared/MobileBar/MobileBar";
+import NavigationBar from "../../Shared/NavigationBar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,57 +64,68 @@ const containerVariants = {
 const Login = () => {
   const classes = useStyles();
   return (
-    <Container>
-      <Grid
-        container
-        justify="center"
-        alignItems="center"
-        className={clsx(classes.root)}
-      >
+    <>
+      <NavigationBar />
+      <MobileBar />
+      <Container>
         <Grid
-          className={clsx(classes.loginArea)}
           container
-          item
-          md={6}
-          lg={6}
-          sm={12}
-          xs={12}
-          direction="column"
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
+          justify="center"
+          alignItems="center"
+          className={clsx(classes.root)}
         >
-          <Typography align="center" variant="h3">
-            Welcome Back!
-          </Typography>
-          <FormGroup className={clsx(classes.formControl)}>
-            <FormControl className={clsx(classes.form)}>
-              <TextField id="outlined-basic" label="Email" variant="outlined" />
-            </FormControl>
-            <FormControl className={clsx(classes.form)}>
-              <TextField
-                id="outlined-basic"
-                label="Password"
-                variant="outlined"
-                type="password"
-              />
-            </FormControl>
-            <Grid container justify="flex-end">
-              <Typography variant="subtitle1" className={clsx(classes.forget)}>
-                Forgot Password?
-              </Typography>
+          <Grid
+            className={clsx(classes.loginArea)}
+            container
+            item
+            md={6}
+            lg={6}
+            sm={12}
+            xs={12}
+            direction="column"
+            component={motion.div}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <Typography align="center" variant="h3">
+              Welcome Back!
+            </Typography>
+            <FormGroup className={clsx(classes.formControl)}>
+              <FormControl className={clsx(classes.form)}>
+                <TextField
+                  id="outlined-basic"
+                  label="Email"
+                  variant="outlined"
+                />
+              </FormControl>
+              <FormControl className={clsx(classes.form)}>
+                <TextField
+                  id="outlined-basic"
+                  label="Password"
+                  variant="outlined"
+                  type="password"
+                />
+              </FormControl>
+              <Grid container justify="flex-end">
+                <Typography
+                  variant="subtitle1"
+                  className={clsx(classes.forget)}
+                >
+                  Forgot Password?
+                </Typography>
+              </Grid>
+            </FormGroup>
+            <Grid container justify="center">
+              <Button variant="contained" className={clsx(classes.loginBtn)}>
+                Login
+              </Button>
             </Grid>
-          </FormGroup>
-          <Grid container justify="center">
-            <Button variant="contained" className={clsx(classes.loginBtn)}>
-              Login
-            </Button>
           </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </>
   );
 };
 
