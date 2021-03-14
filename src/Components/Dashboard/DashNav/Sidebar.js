@@ -3,24 +3,22 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  //   makeStyles,
+  // makeStyles,
 } from "@material-ui/core";
 // import clsx from "clsx";
 import React from "react";
 
 // const useStyles = makeStyles((theme) => ({
-//   dashNav: {
-//     height: "100vh",
-//     display: "flex",
-//     flexDirection: "column",
-//     alignItems: "center",
+//   fonts: {
+//     fontSize: 18,
+//     fontWeight: "bold",
 //   },
 // }));
 
 const Sidebar = () => {
-  //   const classes = useStyles();
+  // const classes = useStyles();
   return (
-    <List component="nav" aria-label="main mailbox folders">
+    <List component="nav" aria-label="Dashboard Navigation">
       <ListItem button>
         <ListItemIcon></ListItemIcon>
         <ListItemText primary="Connect Wallet" />

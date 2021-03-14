@@ -12,14 +12,17 @@ const useStyles = makeStyles((theme) => ({
 const Dashboard = () => {
   const classes = useStyles();
   return (
-    <>
-      <Grid item md={3} lg={3} sm={12} className={clsx(classes.root)}>
-        <Grid container justify="center" alignItems="center">
-          <Sidebar />
-        </Grid>
+    <Grid
+      container
+      direction="row"
+      className={clsx(classes.root)}
+      alignItems="center"
+    >
+      <Grid item md={3} lg={3} sm={12}>
+        <Sidebar />
       </Grid>
       <Grid item md={9} lg={9} sm={12}></Grid>
-    </>
+    </Grid>
   );
 };
 
