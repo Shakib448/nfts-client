@@ -9,7 +9,6 @@ import {
   Typography,
 } from "@material-ui/core";
 import clsx from "clsx";
-import { motion } from "framer-motion";
 import React from "react";
 import { MobileBar } from "../../Shared/MobileBar/MobileBar";
 import NavigationBar from "../../Shared/NavigationBar";
@@ -47,20 +46,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const containerVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay: 0.3,
-      duration: 0.3,
-    },
-  },
-  exit: { x: "-100vw", transition: { ease: "easeInOut" } },
-};
-
 const Login = () => {
   const classes = useStyles();
   return (
@@ -83,11 +68,6 @@ const Login = () => {
             sm={12}
             xs={12}
             direction="column"
-            component={motion.div}
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
           >
             <Typography align="center" variant="h3">
               Welcome Back!

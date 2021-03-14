@@ -7,6 +7,7 @@ const About = () => {
     <>
       <NavigationBar />
       <MobileBar />
+      <h1>You you about page</h1>
     </>
   );
 };

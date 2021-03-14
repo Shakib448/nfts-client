@@ -10,6 +10,7 @@ import { AnimatePresence } from "framer-motion";
 import SingUp from "./Components/SignUp/SignUp";
 import Contact from "./Components/Contact/Contact";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import About from "./Components/About/About";
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
       <AnimatePresence exitBeforeEnter initial={false}>
         <Switch location={location} key={location.key}>
           <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SingUp} />
