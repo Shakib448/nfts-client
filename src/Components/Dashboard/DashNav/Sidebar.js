@@ -1,6 +1,7 @@
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import { motion } from "framer-motion";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const containerVariants = {
   hidden: {
@@ -25,7 +26,7 @@ const Sidebar = () => {
       exit="exit"
     >
       <List component="nav" aria-label="Dashboard Navigation">
-        <ListItem button>
+        <ListItem button component={NavLink} to="/collections">
           <ListItemIcon></ListItemIcon>
           <ListItemText primary="Connect Wallet" />
         </ListItem>
