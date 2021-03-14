@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
     position: "relative",
+    overflow: "hidden",
   },
 }));
 

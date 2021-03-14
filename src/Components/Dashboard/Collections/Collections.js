@@ -10,6 +10,7 @@ import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
 import settings from "../../../Images/setting.png";
+import btnIcon from "../../../Images/Vector.png";
 
 const useStyles = makeStyles((theme) => ({
   settings: {
@@ -60,7 +61,11 @@ const Collections = () => {
       </Box>
       <Grid container direction="row" className={clsx(classes.collections)}>
         <Typography variant="h3">Collections</Typography>
-        <Button variant="outlined" className={clsx(classes.collectionsBtn)}>
+        <Button
+          variant="outlined"
+          className={clsx(classes.collectionsBtn)}
+          startIcon={<img src={btnIcon} alt="fileIcon" />}
+        >
           New Collection
         </Button>
       </Grid>
