@@ -1,4 +1,5 @@
 import { Grid, makeStyles } from "@material-ui/core";
+import { Collections } from "@material-ui/icons";
 import clsx from "clsx";
 import React from "react";
 import Sidebar from "../DashNav/Sidebar";
@@ -6,6 +7,9 @@ import Sidebar from "../DashNav/Sidebar";
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100vh",
+  },
+  collections: {
+    position: "relative",
   },
 }));
 
@@ -21,8 +25,8 @@ const Dashboard = () => {
       <Grid item md={3} lg={3} sm={12}>
         <Sidebar />
       </Grid>
-      <Grid item md={9} lg={9} sm={12}>
-        <h1>You made it</h1>
+      <Grid item md={9} lg={9} sm={12} className={clsx(classes.collections)}>
+        <Collections />
       </Grid>
     </Grid>
   );
