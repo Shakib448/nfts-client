@@ -5,6 +5,7 @@ import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 import "./styles.scss";
+import clsx from "clsx";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -37,7 +38,10 @@ export const MobileBar = () => {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      className={`${isOpen ? "mobileBar__nav" : "mobileBar__nav-show"}`}
+      className={clsx({
+        mobileBar__nav: isOpen,
+        "mobileBar__nav-show": !isOpen,
+      })}
     >
       <motion.div className="background" variants={sidebar} />
       <Navigation />

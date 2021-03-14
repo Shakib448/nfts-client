@@ -5,6 +5,8 @@ import HomeContents from "./HomeContents";
 import "./Home.scss";
 import HomeAnimation from "./HomeAnimation";
 import { motion } from "framer-motion";
+import NavigationBar from "../../Shared/NavigationBar";
+import { MobileBar } from "../../Shared/MobileBar/MobileBar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,43 +53,47 @@ const containerVariants = {
 const Home = () => {
   const classes = useStyles();
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-    >
-      <Container>
-        <Grid container direction="row" className={clsx(classes.root)}>
-          <Grid
-            container
-            justify="center"
-            alignItems="center"
-            item
-            md={6}
-            lg={6}
-            sm={12}
-            xs={12}
-          >
-            <Grid container justify="center">
-              <HomeAnimation />
+    <>
+      <NavigationBar />
+      <MobileBar />
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
+        <Container>
+          <Grid container direction="row" className={clsx(classes.root)}>
+            <Grid
+              container
+              justify="center"
+              alignItems="center"
+              item
+              md={6}
+              lg={6}
+              sm={12}
+              xs={12}
+            >
+              <Grid container justify="center">
+                <HomeAnimation />
+              </Grid>
+            </Grid>
+            <Grid
+              container
+              justify="center"
+              alignItems="center"
+              item
+              md={6}
+              lg={6}
+              sm={12}
+              xs={12}
+            >
+              <HomeContents />
             </Grid>
           </Grid>
-          <Grid
-            container
-            justify="center"
-            alignItems="center"
-            item
-            md={6}
-            lg={6}
-            sm={12}
-            xs={12}
-          >
-            <HomeContents />
-          </Grid>
-        </Grid>
-      </Container>
-    </motion.div>
+        </Container>
+      </motion.div>
+    </>
   );
 };
 

@@ -112,6 +112,11 @@ const styles = (theme) => ({
       fontFamily: "Lato, sans-serif ",
       fontWeight: "bold",
     },
+    ".MuiTypography-displayBlock": {
+      fontFamily: "Roboto, sans-serif ",
+      fontWeight: "bold",
+      fontSize: 20,
+    },
   },
 });
 
