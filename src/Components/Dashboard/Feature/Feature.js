@@ -1,17 +1,28 @@
-import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Grid,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
 import Settings from "../DahsBoardCommon/Settings";
 import starIcon from "../../../Images/star.png";
+import img from "../../../Images/un2.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 250,
-    margin: theme.spacing(2),
+    width: 350,
+    margin: theme.spacing(1),
     borderRadius: "15px",
   },
   media: {
-    height: 200,
+    height: 300,
   },
 
   feature: {
@@ -66,7 +77,32 @@ const Feature = () => {
         </Button>
       </Grid>
       <Grid container direction="row" className={clsx(classes.collections)}>
-        <Typography variant="h3">Collection 1 ...</Typography>
+        <Grid item lg={4} md={4} sm={12}>
+          <Card className={clsx(classes.root)}>
+            <CardActionArea>
+              <CardMedia
+                className={clsx(classes.media)}
+                image={img}
+                title="Contemplative Reptile"
+              />
+              <CardContent>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                  gutterBottom
+                >
+                  CryptoKitties
+                </Typography>
+                <Typography variant="h5" component="h4">
+                  <Box fontWeight="fontWeightBold" gutterBottom>
+                    My nam Jeff
+                  </Box>
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
       </Grid>
 
       <Grid container justify="center">
