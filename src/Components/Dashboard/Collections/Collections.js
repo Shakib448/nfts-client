@@ -9,7 +9,6 @@ import {
   Typography,
 } from "@material-ui/core";
 import clsx from "clsx";
-import { motion } from "framer-motion";
 import React from "react";
 import btnIcon from "../../../Images/Vector.png";
 import img1 from "../../../Images/un2.png";
