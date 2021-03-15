@@ -32,7 +32,6 @@ const containerVariants = {
       duration: 0.3,
     },
   },
-  exit: { y: "100vh", transition: { ease: "easeInOut" } },
 };
 
 const Dashboard = () => {
@@ -45,8 +44,6 @@ const Dashboard = () => {
       className={clsx(classes.root)}
       alignItems="center"
       component={motion.div}
-      initial="hidden"
-      animate="visible"
     >
       <Sidebar />
       <Grid item md={9} lg={9} sm={12}>
@@ -55,7 +52,6 @@ const Dashboard = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            exit="exit"
           >
             <ConnectWallet />
           </motion.div>
@@ -65,7 +61,6 @@ const Dashboard = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            exit="exit"
           >
             <Collections />
           </motion.div>
@@ -75,7 +70,6 @@ const Dashboard = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            exit="exit"
           >
             <Feature />
           </motion.div>

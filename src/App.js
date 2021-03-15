@@ -20,7 +20,7 @@ function App() {
       <GlobalStyles />
       <ParticlesJs />
 
-      <AnimatePresence exitBeforeEnter initial={false}>
+      <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
