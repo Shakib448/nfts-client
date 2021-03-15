@@ -103,6 +103,11 @@ const Feature = () => {
             </CardActionArea>
           </Card>
         </Grid>
+        <Grid container lg={6} md={6} sm={12}>
+          <Grid container alignItems="center" justify="center">
+            <Typography variant="h4">Auction ending in</Typography>
+          </Grid>
+        </Grid>
       </Grid>
 
       <Grid container justify="center">
