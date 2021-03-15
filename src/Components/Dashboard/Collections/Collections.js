@@ -20,6 +20,10 @@ import img2 from "../../../Images/un1.png";
 import img3 from "../../../Images/un3.png";
 
 const useStyles = makeStyles((theme) => ({
+  main: {
+    padding: theme.spacing(2),
+    margin: theme.spacing(2),
+  },
   root: {
     width: 250,
     margin: theme.spacing(2),
@@ -89,6 +93,7 @@ const Collections = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
+      className={clsx(classes.main)}
     >
       <Box className={clsx(classes.settings)}>
         <IconButton>
