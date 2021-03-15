@@ -37,11 +37,14 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(2),
   },
   collectionsBtn: {
-    background: "transparent",
-    marginLeft: theme.spacing(2),
-    textTransform: "none",
-    fontSize: 16,
     borderRadius: "15px",
+    paddingTop: theme.spacing(1),
+    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(4),
+    paddingBottom: theme.spacing(1),
+    marginLeft: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    fontWeight: "bold",
   },
   img: {
     width: "15px",
@@ -97,7 +100,9 @@ const Collections = () => {
         </IconButton>
       </Box>
       <Grid container direction="row" className={clsx(classes.collections)}>
-        <Typography variant="h4">Collections</Typography>
+        <Typography variant="h3" gutterBottom>
+          Collections
+        </Typography>
         <Button
           variant="outlined"
           className={clsx(classes.collectionsBtn)}
@@ -108,6 +113,10 @@ const Collections = () => {
           New Collection
         </Button>
       </Grid>
+      <Grid direction="row" className={clsx(classes.collections)}>
+        <Typography variant="h3">Collection 1 ...</Typography>
+      </Grid>
+
       <Grid container direction="row">
         {collection.map((item, index) => (
           <Card className={clsx(classes.root)} key={index}>
