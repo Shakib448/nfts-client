@@ -1,25 +1,27 @@
 import {
-  Box,
   Button,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
   Grid,
-  IconButton,
   makeStyles,
   Typography,
 } from "@material-ui/core";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
-import settings from "../../../Images/setting.png";
 import btnIcon from "../../../Images/Vector.png";
 import img1 from "../../../Images/un2.png";
 import img2 from "../../../Images/un1.png";
 import img3 from "../../../Images/un3.png";
+import Settings from "../DahsBoardCommon/Settings";
 
 const useStyles = makeStyles((theme) => ({
+  main: {
+    padding: theme.spacing(2),
+    margin: theme.spacing(2),
+  },
   root: {
     width: 250,
     margin: theme.spacing(2),
@@ -28,29 +30,25 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 200,
   },
-  settings: {
-    position: "absolute",
-    top: 10,
-    left: 320,
-  },
+
   collections: {
     marginLeft: theme.spacing(2),
   },
   collectionsBtn: {
-    background: "transparent",
-    marginLeft: theme.spacing(2),
-    textTransform: "none",
-    fontSize: 16,
     borderRadius: "15px",
+    paddingTop: theme.spacing(1),
+    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(4),
+    paddingBottom: theme.spacing(1),
+    marginLeft: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    fontWeight: "bold",
   },
   img: {
     width: "15px",
     height: "15px",
   },
-  settingImg: {
-    width: "40px",
-    height: "40px",
-  },
+
   collectionConBtn: {
     background: "linear-gradient(45deg, #DAC3FC 30%, #97C5FC 90%)",
     boxShadow: "0px 12px 25px 5px rgba(142, 197, 252, 0.5)",
@@ -76,7 +74,6 @@ const containerVariants = {
       duration: 0.3,
     },
   },
-  exit: { y: "100vh", transition: { ease: "easeInOut" } },
 };
 const Collections = () => {
   const classes = useStyles();
@@ -85,19 +82,13 @@ const Collections = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      exit="exit"
+      className={clsx(classes.main)}
     >
-      <Box className={clsx(classes.settings)}>
-        <IconButton>
-          <img
-            src={settings}
-            alt="settings"
-            className={clsx(classes.settingImg)}
-          />
-        </IconButton>
-      </Box>
+      <Settings showConnect={false} />
       <Grid container direction="row" className={clsx(classes.collections)}>
-        <Typography variant="h4">Collections</Typography>
+        <Typography variant="h3" gutterBottom>
+          Collections
+        </Typography>
         <Button
           variant="outlined"
           className={clsx(classes.collectionsBtn)}
@@ -108,6 +99,10 @@ const Collections = () => {
           New Collection
         </Button>
       </Grid>
+      <Grid container direction="row" className={clsx(classes.collections)}>
+        <Typography variant="h3">Collection 1 ...</Typography>
+      </Grid>
+
       <Grid container direction="row">
         {collection.map((item, index) => (
           <Card className={clsx(classes.root)} key={index}>

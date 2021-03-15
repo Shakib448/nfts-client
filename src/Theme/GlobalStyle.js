@@ -115,7 +115,7 @@ const styles = (theme) => ({
     ".MuiTypography-displayBlock": {
       fontFamily: "Roboto, sans-serif ",
       fontWeight: "bold",
-      fontSize: 20,
+      fontSize: 30,
     },
   },
 });

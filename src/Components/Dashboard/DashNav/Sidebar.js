@@ -1,12 +1,23 @@
-import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import {
+  Grid,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  makeStyles,
+} from "@material-ui/core";
+import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const containerVariants = {
-  hidden: {
-    opacity: 0,
+const useStyles = makeStyles((theme) => ({
+  active: {
+    background: "linear-gradient(45deg, #DAC3FC 30%, #97C5FC 90%)",
   },
+}));
+
+const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
@@ -14,23 +25,38 @@ const containerVariants = {
       duration: 0.3,
     },
   },
-  exit: { x: "-100vw", transition: { ease: "easeInOut" } },
 };
 
 const Sidebar = () => {
+  const classes = useStyles();
   return (
-    <motion.div
+    <Grid
+      component={motion.div}
+      Grid
+      item
+      md={3}
+      lg={3}
+      sm={12}
       variants={containerVariants}
-      initial="hidden"
       animate="visible"
-      exit="exit"
     >
       <List component="nav" aria-label="Dashboard Navigation">
-        <ListItem button component={NavLink} to="/collections">
+        <ListItem
+          button
+          component={NavLink}
+          to="/connect-wallet"
+          activeClassName={clsx(classes.active)}
+        >
           <ListItemIcon></ListItemIcon>
           <ListItemText primary="Connect Wallet" />
         </ListItem>
-        <ListItem button>
+
+        <ListItem
+          button
+          component={NavLink}
+          to="/collections"
+          activeClassName={clsx(classes.active)}
+        >
           <ListItemIcon></ListItemIcon>
           <ListItemText primary="Collections" />
         </ListItem>
@@ -43,7 +69,7 @@ const Sidebar = () => {
           <ListItemText primary="Profile" />
         </ListItem>
       </List>
-    </motion.div>
+    </Grid>
   );
 };
 

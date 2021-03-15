@@ -27,7 +27,8 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SingUp} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/connect-wallet" component={Dashboard} />
+          <Route exact path="/collections" component={Dashboard} />
         </Switch>
       </AnimatePresence>
     </MuiThemeProvider>
