@@ -4,10 +4,18 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  makeStyles,
 } from "@material-ui/core";
+import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
 import { NavLink } from "react-router-dom";
+
+const useStyles = makeStyles((theme) => ({
+  active: {
+    background: "linear-gradient(45deg, #DAC3FC 30%, #97C5FC 90%)",
+  },
+}));
 
 const containerVariants = {
   visible: {
@@ -20,6 +28,7 @@ const containerVariants = {
 };
 
 const Sidebar = () => {
+  const classes = useStyles();
   return (
     <Grid
       component={motion.div}
@@ -32,11 +41,22 @@ const Sidebar = () => {
       animate="visible"
     >
       <List component="nav" aria-label="Dashboard Navigation">
-        <ListItem button component={NavLink} to="/connect-wallet">
+        <ListItem
+          button
+          component={NavLink}
+          to="/connect-wallet"
+          activeClassName={clsx(classes.active)}
+        >
           <ListItemIcon></ListItemIcon>
           <ListItemText primary="Connect Wallet" />
         </ListItem>
-        <ListItem button component={NavLink} to="/collections">
+
+        <ListItem
+          button
+          component={NavLink}
+          to="/collections"
+          activeClassName={clsx(classes.active)}
+        >
           <ListItemIcon></ListItemIcon>
           <ListItemText primary="Collections" />
         </ListItem>
