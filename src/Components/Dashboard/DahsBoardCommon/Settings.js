@@ -31,7 +31,11 @@ const useStyles = makeStyles((theme) => ({
 const Settings = ({ showConnect }) => {
   const classes = useStyles();
   return (
-    <Grid container justify="space-between" className={clsx(classes.settings)}>
+    <Grid
+      container
+      justify="space-between"
+      className={clsx({ [classes.settings]: showConnect })}
+    >
       <IconButton>
         <img
           src={settings}
