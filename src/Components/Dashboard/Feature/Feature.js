@@ -3,13 +3,8 @@ import clsx from "clsx";
 import React from "react";
 import Settings from "../DahsBoardCommon/Settings";
 import starIcon from "../../../Images/star.png";
-import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
-  main: {
-    padding: theme.spacing(2),
-    margin: theme.spacing(2),
-  },
   root: {
     width: 250,
     margin: theme.spacing(2),
@@ -51,28 +46,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const containerVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay: 0.3,
-      duration: 0.3,
-    },
-  },
-};
-
 const Feature = () => {
   const classes = useStyles();
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      className={clsx(classes.main)}
-    >
+    <>
       <Settings showConnect={false} />
       <Grid container direction="row" className={clsx(classes.feature)}>
         <Typography variant="h3" gutterBottom>
@@ -97,7 +74,7 @@ const Feature = () => {
           Continue
         </Button>
       </Grid>
-    </motion.div>
+    </>
   );
 };
 

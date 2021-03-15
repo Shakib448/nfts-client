@@ -18,10 +18,6 @@ import img3 from "../../../Images/un3.png";
 import Settings from "../DahsBoardCommon/Settings";
 
 const useStyles = makeStyles((theme) => ({
-  main: {
-    padding: theme.spacing(2),
-    margin: theme.spacing(2),
-  },
   root: {
     width: 250,
     margin: theme.spacing(2),
@@ -63,27 +59,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const containerVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay: 0.3,
-      duration: 0.3,
-    },
-  },
-};
 const Collections = () => {
   const classes = useStyles();
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      className={clsx(classes.main)}
-    >
+    <>
       <Settings showConnect={false} />
       <Grid container direction="row" className={clsx(classes.collections)}>
         <Typography variant="h3" gutterBottom>
@@ -129,7 +108,8 @@ const Collections = () => {
           Continue
         </Button>
       </Grid>
-    </motion.div>
+    </>
+    // </motion.div>
   );
 };
 
