@@ -43,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
     width: "25px",
     height: "25px",
   },
-
   collectionConBtn: {
     background: "linear-gradient(45deg, #DAC3FC 30%, #97C5FC 90%)",
     boxShadow: "0px 12px 25px 5px rgba(142, 197, 252, 0.5)",
@@ -117,7 +116,17 @@ const Feature = () => {
             <Typography variant="h4" className={clsx(classes.auction)}>
               Auction ending in
             </Typography>
+
             <CountDown />
+
+            <Grid container justify="center">
+              <Button
+                variant="contained"
+                className={clsx(classes.collectionConBtn)}
+              >
+                Make Offer
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
