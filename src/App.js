@@ -11,6 +11,7 @@ import SingUp from "./Components/SignUp/SignUp";
 import Contact from "./Components/Contact/Contact";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import About from "./Components/About/About";
+import Collections from "./Components/Dashboard/Collections/Collections";
 
 function App() {
   const location = useLocation();
@@ -27,7 +28,8 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SingUp} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/connect-wallet" component={Dashboard} />
+          <Route exact path="/collections" component={Collections} />
         </Switch>
       </AnimatePresence>
     </MuiThemeProvider>

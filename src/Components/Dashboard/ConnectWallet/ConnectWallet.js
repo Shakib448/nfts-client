@@ -1,7 +1,8 @@
-import { makeStyles } from "@material-ui/core";
+import { Box, makeStyles, Typography } from "@material-ui/core";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import React from "react";
+import Settings from "../DahsBoardCommon/Settings";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,11 +28,17 @@ const ConnectWallet = () => {
   const classes = useStyles();
   return (
     <motion.div
+      variants={containerVariants}
       initial="hidden"
       animate="visible"
       exit="exit"
       className={clsx(classes.root)}
-    ></motion.div>
+    >
+      <Settings showConnect />
+      <Typography variant="h1" color="secondary" align="center">
+        <Box fontWeight="fontWeightBold">Connect wallet to start</Box>
+      </Typography>
+    </motion.div>
   );
 };
 

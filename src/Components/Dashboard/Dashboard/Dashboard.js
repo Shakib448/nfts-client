@@ -1,9 +1,10 @@
 import { Grid, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
-// import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import Sidebar from "../DashNav/Sidebar";
 import Collections from "../Collections/Collections";
+import ConnectWallet from "../ConnectWallet/ConnectWallet";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Dashboard = () => {
-  // const location = useLocation();
+  const location = useLocation();
   const classes = useStyles();
   return (
     <Grid
@@ -28,11 +29,10 @@ const Dashboard = () => {
       className={clsx(classes.root)}
       alignItems="center"
     >
-      <Grid item md={3} lg={3} sm={12}>
-        <Sidebar />
-      </Grid>
+      <Sidebar />
       <Grid item md={9} lg={9} sm={12}>
-        <Collections />
+        {location.pathname === "/connect-wallet" && <ConnectWallet />}
+        {location.pathname === "/collections" && <Collections />}
       </Grid>
     </Grid>
   );

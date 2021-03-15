@@ -5,7 +5,11 @@ import settings from "../../../Images/setting.png";
 
 const useStyles = makeStyles((theme) => ({
   settings: {
+    marginTop: theme.spacing(2),
     marginBottom: theme.spacing(1),
+    position: "absolute",
+    top: 0,
+    width: "70vw",
   },
   settingImg: {
     width: "40px",

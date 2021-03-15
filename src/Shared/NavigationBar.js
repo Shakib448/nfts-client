@@ -81,11 +81,11 @@ const NavigationBar = () => {
             </Button>
             <Button
               component={NavLink}
-              to="/dashboard"
+              to="/connect-wallet"
               className={clsx(classes.menuButton)}
               color="inherit"
             >
-              Dashboard
+              Wallet
             </Button>
             <Button
               className={clsx(classes.menuButton)}
