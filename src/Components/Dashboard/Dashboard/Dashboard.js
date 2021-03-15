@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import Sidebar from "../DashNav/Sidebar";
 import Collections from "../Collections/Collections";
 import ConnectWallet from "../ConnectWallet/ConnectWallet";
+import Feature from "../Feature/Feature";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,6 +34,7 @@ const Dashboard = () => {
       <Grid item md={9} lg={9} sm={12}>
         {location.pathname === "/connect-wallet" && <ConnectWallet />}
         {location.pathname === "/collections" && <Collections />}
+        {location.pathname === "/feature" && <Feature />}
       </Grid>
     </Grid>
   );
