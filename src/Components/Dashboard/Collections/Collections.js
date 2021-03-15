@@ -76,8 +76,9 @@ const containerVariants = {
   },
   exit: { y: "100vh", transition: { ease: "easeInOut" } },
 };
-const Collections = () => {
+const Collections = ({ location }) => {
   const classes = useStyles();
+  console.log(location.pathname);
   return (
     <motion.div
       variants={containerVariants}
@@ -101,7 +102,7 @@ const Collections = () => {
           New Collection
         </Button>
       </Grid>
-      <Grid direction="row" className={clsx(classes.collections)}>
+      <Grid container direction="row" className={clsx(classes.collections)}>
         <Typography variant="h3">Collection 1 ...</Typography>
       </Grid>
 

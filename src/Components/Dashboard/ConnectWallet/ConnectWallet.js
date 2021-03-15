@@ -24,8 +24,9 @@ const containerVariants = {
   },
   exit: { y: "100vh", transition: { ease: "easeInOut" } },
 };
-const ConnectWallet = () => {
+const ConnectWallet = ({ location }) => {
   const classes = useStyles();
+  console.log(location?.pathname);
   return (
     <motion.div
       variants={containerVariants}
