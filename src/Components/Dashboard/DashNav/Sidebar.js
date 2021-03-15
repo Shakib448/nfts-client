@@ -60,7 +60,12 @@ const Sidebar = () => {
           <ListItemIcon></ListItemIcon>
           <ListItemText primary="Collections" />
         </ListItem>
-        <ListItem button>
+        <ListItem
+          button
+          component={NavLink}
+          to="/feature"
+          activeClassName={clsx(classes.active)}
+        >
           <ListItemIcon></ListItemIcon>
           <ListItemText primary="Featured" />
         </ListItem>

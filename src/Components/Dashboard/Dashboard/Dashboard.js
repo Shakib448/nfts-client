@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom";
 import Sidebar from "../DashNav/Sidebar";
 import Collections from "../Collections/Collections";
 import ConnectWallet from "../ConnectWallet/ConnectWallet";
+import Feature from "../Feature/Feature";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +21,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.3,
+      duration: 0.3,
+    },
+  },
+};
+
 const Dashboard = () => {
   const location = useLocation();
   const classes = useStyles();
@@ -28,11 +43,37 @@ const Dashboard = () => {
       direction="row"
       className={clsx(classes.root)}
       alignItems="center"
+      component={motion.div}
     >
       <Sidebar />
       <Grid item md={9} lg={9} sm={12}>
-        {location.pathname === "/connect-wallet" && <ConnectWallet />}
-        {location.pathname === "/collections" && <Collections />}
+        {location.pathname === "/connect-wallet" && (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <ConnectWallet />
+          </motion.div>
+        )}
+        {location.pathname === "/collections" && (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <Collections />
+          </motion.div>
+        )}
+        {location.pathname === "/feature" && (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <Feature />
+          </motion.div>
+        )}
       </Grid>
     </Grid>
   );

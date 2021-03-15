@@ -20,7 +20,7 @@ function App() {
       <GlobalStyles />
       <ParticlesJs />
 
-      <AnimatePresence exitBeforeEnter initial={false}>
+      <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
@@ -29,6 +29,7 @@ function App() {
           <Route exact path="/sign-up" component={SingUp} />
           <Route exact path="/connect-wallet" component={Dashboard} />
           <Route exact path="/collections" component={Dashboard} />
+          <Route exact path="/feature" component={Dashboard} />
         </Switch>
       </AnimatePresence>
     </MuiThemeProvider>
