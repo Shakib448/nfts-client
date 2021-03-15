@@ -14,6 +14,7 @@ import React from "react";
 import Settings from "../DahsBoardCommon/Settings";
 import starIcon from "../../../Images/star.png";
 import img from "../../../Images/un2.png";
+import CountDown from "../DahsBoardCommon/CountDown";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,6 +55,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(2),
     fontWeight: "bold",
+  },
+  auction: {
+    color: "#745297",
   },
 }));
 
@@ -104,8 +108,16 @@ const Feature = () => {
           </Card>
         </Grid>
         <Grid container lg={6} md={6} sm={12}>
-          <Grid container alignItems="center" justify="center">
-            <Typography variant="h4">Auction ending in</Typography>
+          <Grid
+            container
+            alignItems="center"
+            justify="center"
+            direction="column"
+          >
+            <Typography variant="h4" className={clsx(classes.auction)}>
+              Auction ending in
+            </Typography>
+            <CountDown />
           </Grid>
         </Grid>
       </Grid>
