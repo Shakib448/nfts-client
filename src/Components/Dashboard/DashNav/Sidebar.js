@@ -10,9 +10,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const containerVariants = {
-  hidden: {
-    opacity: 0,
-  },
   visible: {
     opacity: 1,
     transition: {
@@ -20,7 +17,6 @@ const containerVariants = {
       duration: 0.3,
     },
   },
-  exit: { x: "-100vw", transition: { ease: "easeInOut" } },
 };
 
 const Sidebar = () => {
@@ -33,9 +29,7 @@ const Sidebar = () => {
       lg={3}
       sm={12}
       variants={containerVariants}
-      initial="hidden"
       animate="visible"
-      exit="exit"
     >
       <List component="nav" aria-label="Dashboard Navigation">
         <ListItem button component={NavLink} to="/connect-wallet">

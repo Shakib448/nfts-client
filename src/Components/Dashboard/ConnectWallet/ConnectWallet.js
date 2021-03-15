@@ -22,17 +22,14 @@ const containerVariants = {
       duration: 0.3,
     },
   },
-  exit: { y: "100vh", transition: { ease: "easeInOut" } },
 };
-const ConnectWallet = ({ location }) => {
+const ConnectWallet = () => {
   const classes = useStyles();
-  console.log(location?.pathname);
   return (
     <motion.div
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      exit="exit"
       className={clsx(classes.root)}
     >
       <Settings showConnect />

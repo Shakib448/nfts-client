@@ -74,7 +74,6 @@ const containerVariants = {
       duration: 0.3,
     },
   },
-  exit: { y: "100vh", transition: { ease: "easeInOut" } },
 };
 const Collections = () => {
   const classes = useStyles();
@@ -83,7 +82,6 @@ const Collections = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      exit="exit"
       className={clsx(classes.main)}
     >
       <Settings showConnect={false} />
