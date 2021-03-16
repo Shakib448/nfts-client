@@ -1,4 +1,4 @@
-import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Box, Button, makeStyles, Typography } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
 
@@ -20,7 +20,7 @@ const AccountContent = () => {
   const classes = useStyles();
 
   return (
-    <Grid item container direction="column" alignItems="center">
+    <>
       <Typography variant="h4">
         <Box fontWeight="fontWeightBold">Connected Wallet</Box>
       </Typography>
@@ -32,7 +32,7 @@ const AccountContent = () => {
       <Button variant="contained" className={clsx(classes.accountBtn)}>
         Disconnect
       </Button>
-    </Grid>
+    </>
   );
 };
 
