@@ -66,7 +66,7 @@ const Feature = () => {
     <>
       <Settings showConnect={false} />
       <Grid container direction="row" className={clsx(classes.feature)}>
-        <Typography variant="h3" gutterBottom>
+        <Typography variant="h3">
           <Box fontWeight="fontWeightBold">Feature NFT</Box>
         </Typography>
         <Button
@@ -89,24 +89,17 @@ const Feature = () => {
                 title="Contemplative Reptile"
               />
               <CardContent>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                  gutterBottom
-                >
+                <Typography variant="body2" color="textSecondary">
                   CryptoKitties
                 </Typography>
                 <Typography variant="h5" component="h4">
-                  <Box fontWeight="fontWeightBold" gutterBottom>
-                    My nam Jeff
-                  </Box>
+                  <Box fontWeight="fontWeightBold">My nam Jeff</Box>
                 </Typography>
               </CardContent>
             </CardActionArea>
           </Card>
         </Grid>
-        <Grid container lg={6} md={6} sm={12}>
+        <Grid item container lg={6} md={6} sm={12}>
           <Grid
             container
             alignItems="center"
