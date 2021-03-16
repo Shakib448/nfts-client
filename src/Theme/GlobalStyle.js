@@ -113,8 +113,8 @@ const styles = (theme) => ({
       fontWeight: "bold",
     },
     ".MuiTypography-displayBlock": {
-      fontFamily: "Roboto, sans-serif ",
-      fontWeight: "bold",
+      fontFamily: "Roboto, sans-serif !important",
+      fontWeight: "bold !important",
       fontSize: "30px !important",
     },
     ".MuiOutlinedInput-adornedStart": {
