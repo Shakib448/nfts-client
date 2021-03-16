@@ -90,7 +90,9 @@ const Settings = ({ showConnect, title, showAccount }) => {
         <MenuItem onClick={handleClose} component={Link} to="/account-settings">
           Account Settings
         </MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose} component={Link} to="/edit-profile">
+          Edit Profile
+        </MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>
       {showConnect && (
