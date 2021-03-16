@@ -30,6 +30,7 @@ function App() {
           <Route exact path="/connect-wallet" component={Dashboard} />
           <Route exact path="/collections" component={Dashboard} />
           <Route exact path="/feature" component={Dashboard} />
+          <Route exact path="/account-settings" component={Dashboard} />
         </Switch>
       </AnimatePresence>
     </MuiThemeProvider>
