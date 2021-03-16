@@ -15,10 +15,10 @@ import React from "react";
 import LanguageIcon from "@material-ui/icons/Language";
 import camera from "../../../Images/camera 1.png";
 import AddIcon from "@material-ui/icons/Add";
-import img1 from "../../../Images/Rectangle 83.png";
-import img2 from "../../../Images/Rectangle 108.png";
-import img3 from "../../../Images/Rectangle 109.png";
-import img4 from "../../../Images/Rectangle 110.png";
+import img1 from "../../../Images/Rectangle 109.png";
+import img2 from "../../../Images/Rectangle 110.png";
+import img3 from "../../../Images/Rectangle 108.png";
+import img4 from "../../../Images/Mask Group.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
