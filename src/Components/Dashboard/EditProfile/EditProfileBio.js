@@ -15,6 +15,10 @@ import React from "react";
 import LanguageIcon from "@material-ui/icons/Language";
 import camera from "../../../Images/camera 1.png";
 import AddIcon from "@material-ui/icons/Add";
+import img1 from "../../../Images/Rectangle 83.png";
+import img2 from "../../../Images/Rectangle 108.png";
+import img3 from "../../../Images/Rectangle 109.png";
+import img4 from "../../../Images/Rectangle 110.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -76,6 +80,10 @@ const useStyles = makeStyles((theme) => ({
   },
   textColor: {
     marginTop: theme.spacing(2),
+  },
+  editBackground: {
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
   },
 }));
 
@@ -227,8 +235,36 @@ const EditProfileBio = () => {
           />
         </FormControl>
       </Grid>
+      <Grid
+        item
+        container
+        md={8}
+        lg={8}
+        sm={12}
+        direction="column"
+        className={clsx(classes.editBackground)}
+      >
+        <Box mt={4} mb={4}>
+          <Typography variant="h5">
+            <Box fontWeight="fontWeightBold">Background</Box>
+          </Typography>
+        </Box>
+        <Grid item container justify="center">
+          {bgImage.map((item, index) => (
+            <Grid item md={3} lg={3} sm={12} key={index}>
+              <img
+                src={item.img}
+                alt="background"
+                style={{ cursor: "pointer" }}
+              />
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
     </Grid>
   );
 };
+
+const bgImage = [{ img: img1 }, { img: img2 }, { img: img3 }, { img: img4 }];
 
 export default EditProfileBio;
