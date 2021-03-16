@@ -117,6 +117,9 @@ const styles = (theme) => ({
       fontWeight: "bold",
       fontSize: 30,
     },
+    ".MuiOutlinedInput-adornedStart": {
+      paddingLeft: 0,
+    },
   },
 });
 
