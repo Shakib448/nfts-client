@@ -249,7 +249,7 @@ const EditProfileBio = () => {
             <Box fontWeight="fontWeightBold">Background</Box>
           </Typography>
         </Box>
-        <Grid item container justify="center">
+        <Grid item container justify="center" spacing={3}>
           {bgImage.map((item, index) => (
             <Grid item md={3} lg={3} sm={12} key={index}>
               <img
