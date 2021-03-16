@@ -1,7 +1,9 @@
 import { Button, Grid, IconButton, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
-import React from "react";
+import React, { useState } from "react";
 import settings from "../../../Images/setting.png";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const useStyles = makeStyles((theme) => ({
   settings: {
@@ -30,19 +32,39 @@ const useStyles = makeStyles((theme) => ({
 
 const Settings = ({ showConnect }) => {
   const classes = useStyles();
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <Grid
       container
       justify="space-between"
       className={clsx({ [classes.settings]: showConnect })}
     >
-      <IconButton>
+      <IconButton onClick={handleClick}>
         <img
           src={settings}
           alt="settings"
           className={clsx(classes.settingImg)}
         />
       </IconButton>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
       {showConnect && (
         <Button variant="contained" className={clsx(classes.connectBtn)}>
           Connect Wallet
