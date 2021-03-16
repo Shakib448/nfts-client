@@ -81,12 +81,15 @@ const AccountForm = () => {
             labelWidth={100}
           />
         </FormControl>
+        <Grid item container justify="center">
+          <Button
+            variant="contained"
+            className={clsx(classes.accountFormButton)}
+          >
+            Save
+          </Button>
+        </Grid>
       </FormGroup>
-      <Grid item container justify="center">
-        <Button variant="contained" className={clsx(classes.accountFormButton)}>
-          Save
-        </Button>
-      </Grid>
     </Grid>
   );
 };
