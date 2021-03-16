@@ -7,6 +7,7 @@ import {
   Box,
   Typography,
   IconButton,
+  InputLabel,
 } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
@@ -15,7 +16,8 @@ import camera from "../../../Images/camera 1.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: theme.spacing(2),
+    margin: theme.spacing(2),
+    padding: theme.spacing(2),
   },
   formControl: {
     width: "50%",
@@ -46,7 +48,14 @@ const useStyles = makeStyles((theme) => ({
       background: " rgba(0, 0, 0, 0.5)",
     },
   },
-  img: { width: "35px", height: "35px" },
+  img: {
+    width: "35px",
+    height: "35px",
+  },
+  forms: {
+    margin: theme.spacing(1),
+    padding: theme.spacing(1),
+  },
 }));
 
 const EditProfileBio = () => {
@@ -98,6 +107,45 @@ const EditProfileBio = () => {
             </Box>
           </IconButton>
         </label>
+      </Grid>
+      <Grid
+        item
+        container
+        md={8}
+        lg={8}
+        sm={12}
+        justify="center"
+        className={clsx(classes.forms)}
+      >
+        <FormControl className={clsx(classes.formControl)} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-name">Name</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-name"
+            labelWidth={45}
+            className={clsx(classes.form)}
+          />
+        </FormControl>
+      </Grid>
+      <Grid
+        item
+        container
+        md={8}
+        lg={8}
+        sm={12}
+        justify="center"
+        className={clsx(classes.forms)}
+      >
+        <FormControl className={clsx(classes.formControl)} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-bio">Bio</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-bio"
+            labelWidth={20}
+            className={clsx(classes.form)}
+            multiline
+            rows={4}
+            rowsMax={8}
+          />
+        </FormControl>
       </Grid>
     </Grid>
   );
