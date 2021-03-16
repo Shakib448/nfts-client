@@ -6,10 +6,12 @@ import {
   makeStyles,
   Box,
   Typography,
+  IconButton,
 } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
 import LanguageIcon from "@material-ui/icons/Language";
+import camera from "../../../Images/camera 1.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,6 +30,23 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "25px",
     padding: "0 10px",
   },
+  input: {
+    display: "none",
+  },
+  camera: {
+    width: 150,
+    height: 150,
+    background: "#C4C4C4",
+    borderRadius: "50%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    transition: ".5s",
+    "&:hover": {
+      background: " rgba(0, 0, 0, 0.5)",
+    },
+  },
+  img: { width: "35px", height: "35px" },
 }));
 
 const EditProfileBio = () => {
@@ -41,7 +60,7 @@ const EditProfileBio = () => {
             variant="outlined"
             className={clsx(classes.form)}
             startAdornment={
-              <InputAdornment position="start" style={{ paddingLeft: 0 }}>
+              <InputAdornment position="start">
                 <Box className={clsx(classes.ntfs)}>
                   <LanguageIcon fontSize="large" />
                   <Typography variant="h5">
@@ -52,6 +71,33 @@ const EditProfileBio = () => {
             }
           />
         </FormControl>
+      </Grid>
+      <Grid
+        item
+        container
+        md={8}
+        lg={8}
+        sm={12}
+        justify="center"
+        className={clsx(classes.root)}
+      >
+        <input
+          accept="image/*"
+          className={classes.input}
+          id="icon-button-file"
+          type="file"
+        />
+        <label htmlFor="icon-button-file">
+          <IconButton
+            color="primary"
+            aria-label="upload picture"
+            component="span"
+          >
+            <Box variants="div" className={clsx(classes.camera)}>
+              <img src={camera} alt="camera" className={clsx(classes.img)} />
+            </Box>
+          </IconButton>
+        </label>
       </Grid>
     </Grid>
   );
