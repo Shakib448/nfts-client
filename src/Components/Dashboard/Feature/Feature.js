@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     width: "25px",
     height: "25px",
   },
-  collectionConBtn: {
+  featureButton: {
     background: "linear-gradient(45deg, #DAC3FC 30%, #97C5FC 90%)",
     boxShadow: "0px 12px 25px 5px rgba(142, 197, 252, 0.5)",
     borderRadius: "15px",
@@ -66,7 +66,7 @@ const Feature = () => {
     <>
       <Settings showConnect={false} />
       <Grid container direction="row" className={clsx(classes.feature)}>
-        <Typography variant="h3" gutterBottom>
+        <Typography variant="h3">
           <Box fontWeight="fontWeightBold">Feature NFT</Box>
         </Typography>
         <Button
@@ -89,24 +89,17 @@ const Feature = () => {
                 title="Contemplative Reptile"
               />
               <CardContent>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                  gutterBottom
-                >
+                <Typography variant="body2" color="textSecondary">
                   CryptoKitties
                 </Typography>
                 <Typography variant="h5" component="h4">
-                  <Box fontWeight="fontWeightBold" gutterBottom>
-                    My nam Jeff
-                  </Box>
+                  <Box fontWeight="fontWeightBold">My nam Jeff</Box>
                 </Typography>
               </CardContent>
             </CardActionArea>
           </Card>
         </Grid>
-        <Grid container lg={6} md={6} sm={12}>
+        <Grid item container lg={6} md={6} sm={12}>
           <Grid
             container
             alignItems="center"
@@ -122,7 +115,7 @@ const Feature = () => {
             <Grid container justify="center">
               <Button
                 variant="contained"
-                className={clsx(classes.collectionConBtn)}
+                className={clsx(classes.featureButton)}
               >
                 Make Offer
               </Button>
@@ -132,7 +125,7 @@ const Feature = () => {
       </Grid>
 
       <Grid container justify="center">
-        <Button variant="contained" className={clsx(classes.collectionConBtn)}>
+        <Button variant="contained" className={clsx(classes.featureButton)}>
           Continue
         </Button>
       </Grid>

@@ -1,7 +1,17 @@
-import { Button, Grid, IconButton, makeStyles } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  Grid,
+  IconButton,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import clsx from "clsx";
-import React from "react";
+import React, { useState } from "react";
 import settings from "../../../Images/setting.png";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   settings: {
@@ -11,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     width: "70vw",
   },
+
   settingImg: {
     width: "40px",
     height: "40px",
@@ -28,21 +39,60 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Settings = ({ showConnect }) => {
+const Settings = ({ showConnect, title, showAccount }) => {
   const classes = useStyles();
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <Grid
       container
       justify="space-between"
-      className={clsx({ [classes.settings]: showConnect })}
+      className={clsx({
+        [classes.settings]: showConnect,
+      })}
     >
-      <IconButton>
-        <img
-          src={settings}
-          alt="settings"
-          className={clsx(classes.settingImg)}
-        />
-      </IconButton>
+      {showAccount ? (
+        <Grid container direction="row" alignItems="center">
+          <IconButton onClick={handleClick}>
+            <img
+              src={settings}
+              alt="settings"
+              className={clsx(classes.settingImg)}
+            />
+          </IconButton>
+          <Typography variant="h3">
+            <Box fontWeight="fontWeightBold">{title}</Box>
+          </Typography>
+        </Grid>
+      ) : (
+        <IconButton onClick={handleClick}>
+          <img
+            src={settings}
+            alt="settings"
+            className={clsx(classes.settingImg)}
+          />
+        </IconButton>
+      )}
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose} component={Link} to="/account-settings">
+          Account Settings
+        </MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
       {showConnect && (
         <Button variant="contained" className={clsx(classes.connectBtn)}>
           Connect Wallet

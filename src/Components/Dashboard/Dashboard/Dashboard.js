@@ -7,6 +7,7 @@ import Collections from "../Collections/Collections";
 import ConnectWallet from "../ConnectWallet/ConnectWallet";
 import Feature from "../Feature/Feature";
 import { motion } from "framer-motion";
+import AccountSettings from "../AccountSettings/AccountSettings";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -72,6 +73,15 @@ const Dashboard = () => {
             animate="visible"
           >
             <Feature />
+          </motion.div>
+        )}
+        {location.pathname === "/account-settings" && (
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <AccountSettings />
           </motion.div>
         )}
       </Grid>
