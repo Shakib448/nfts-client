@@ -69,7 +69,13 @@ const useStyles = makeStyles((theme) => ({
     height: "55px",
   },
   customForm: {
-    width: "52%",
+    width: "51.5%",
+  },
+  textColorForm: {
+    width: "45.5%",
+  },
+  textColor: {
+    marginTop: theme.spacing(2),
   },
 }));
 
@@ -188,6 +194,36 @@ const EditProfileBio = () => {
             id="outlined-adornment-custom-link"
             labelWidth={90}
             className={clsx(classes.form)}
+          />
+        </FormControl>
+      </Grid>
+      <Grid
+        item
+        container
+        md={8}
+        lg={8}
+        sm={12}
+        justify="center"
+        alignItems="center"
+        className={clsx(classes.textColor)}
+      >
+        <Box mr={1}>
+          <Typography variant="h5">
+            <Box fontWeight="fontWeightBold">Text Color</Box>
+          </Typography>
+        </Box>
+        <FormControl className={clsx(classes.textColorForm)}>
+          <OutlinedInput
+            id="input-with-icon-adornment"
+            variant="outlined"
+            className={clsx(classes.form)}
+            startAdornment={
+              <InputAdornment position="start" style={{ paddingLeft: "14px" }}>
+                <Typography variant="h5">
+                  <Box fontWeight="fontWeightBold">#</Box>
+                </Typography>
+              </InputAdornment>
+            }
           />
         </FormControl>
       </Grid>
