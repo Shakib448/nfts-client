@@ -1,4 +1,11 @@
-import { Button, Grid, IconButton, makeStyles } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  Grid,
+  IconButton,
+  makeStyles,
+  Typography,
+} from "@material-ui/core";
 import clsx from "clsx";
 import React, { useState } from "react";
 import settings from "../../../Images/setting.png";
@@ -8,6 +15,13 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   settings: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(1),
+    position: "absolute",
+    top: 0,
+    width: "70vw",
+  },
+  setting: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(1),
     position: "absolute",
@@ -31,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Settings = ({ showConnect }) => {
+const Settings = ({ showConnect, title, showAccount }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -46,15 +60,33 @@ const Settings = ({ showConnect }) => {
     <Grid
       container
       justify="space-between"
-      className={clsx({ [classes.settings]: showConnect })}
+      className={clsx({
+        [classes.settings]: showConnect,
+        [classes.setting]: showAccount,
+      })}
     >
-      <IconButton onClick={handleClick}>
-        <img
-          src={settings}
-          alt="settings"
-          className={clsx(classes.settingImg)}
-        />
-      </IconButton>
+      {showAccount ? (
+        <Grid container direction="row" alignItems="center">
+          <IconButton onClick={handleClick}>
+            <img
+              src={settings}
+              alt="settings"
+              className={clsx(classes.settingImg)}
+            />
+          </IconButton>
+          <Typography variant="h3">
+            <Box fontWeight="fontWeightBold">{title}</Box>
+          </Typography>
+        </Grid>
+      ) : (
+        <IconButton onClick={handleClick}>
+          <img
+            src={settings}
+            alt="settings"
+            className={clsx(classes.settingImg)}
+          />
+        </IconButton>
+      )}
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}

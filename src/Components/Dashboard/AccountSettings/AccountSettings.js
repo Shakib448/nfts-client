@@ -1,10 +1,12 @@
-import { Box, Container, Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import React from "react";
+import Settings from "../DahsBoardCommon/Settings";
 
 const AccountSettings = () => {
   return (
     <Container>
-      <Box fontWeight="fontWeightBold">Account Settings</Box>
+      <Settings showAccount title="Account Settings" />
+
       <Grid item md={12} lg={12} sm={12}></Grid>
     </Container>
   );
