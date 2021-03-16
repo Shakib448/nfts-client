@@ -11,6 +11,7 @@ import SingUp from "./Components/SignUp/SignUp";
 import Contact from "./Components/Contact/Contact";
 import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
 import About from "./Components/About/About";
+import EditProfile from "./Components/Dashboard/EditProfile/EditProfile";
 
 function App() {
   const location = useLocation();
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SingUp} />
+          <Route exact path="/edit-profile" component={EditProfile} />
           <Route exact path="/connect-wallet" component={Dashboard} />
           <Route exact path="/collections" component={Dashboard} />
           <Route exact path="/feature" component={Dashboard} />
