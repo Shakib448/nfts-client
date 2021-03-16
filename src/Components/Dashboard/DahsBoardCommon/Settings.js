@@ -21,13 +21,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     width: "70vw",
   },
-  setting: {
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(1),
-    position: "absolute",
-    top: 0,
-    width: "70vw",
-  },
+
   settingImg: {
     width: "40px",
     height: "40px",
@@ -62,7 +56,6 @@ const Settings = ({ showConnect, title, showAccount }) => {
       justify="space-between"
       className={clsx({
         [classes.settings]: showConnect,
-        [classes.setting]: showAccount,
       })}
     >
       {showAccount ? (

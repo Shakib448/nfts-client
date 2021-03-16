@@ -3,6 +3,7 @@ import React from "react";
 import Settings from "../DahsBoardCommon/Settings";
 import AccountContent from "./AccountContent";
 import AccountForm from "./AccountForm";
+import AccountPolicy from "./AccountPolicy";
 
 const AccountSettings = () => {
   return (
@@ -13,6 +14,7 @@ const AccountSettings = () => {
           <Grid item container direction="column" alignItems="center">
             <AccountContent />
             <AccountForm />
+            <AccountPolicy />
           </Grid>
         </Grid>
       </Container>
