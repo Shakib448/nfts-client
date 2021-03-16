@@ -8,11 +8,13 @@ import {
   Typography,
   IconButton,
   InputLabel,
+  Button,
 } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
 import LanguageIcon from "@material-ui/icons/Language";
 import camera from "../../../Images/camera 1.png";
+import AddIcon from "@material-ui/icons/Add";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   formControl: {
-    width: "50%",
+    width: "60%",
   },
   form: { borderRadius: "25px" },
   ntfs: {
@@ -55,6 +57,19 @@ const useStyles = makeStyles((theme) => ({
   forms: {
     margin: theme.spacing(1),
     padding: theme.spacing(1),
+  },
+  custom: {
+    margin: theme.spacing(1),
+    padding: theme.spacing(1),
+  },
+  customBtn: {
+    marginRight: theme.spacing(1),
+    borderRadius: "15px",
+    width: "50px",
+    height: "55px",
+  },
+  customForm: {
+    width: "52%",
   },
 }));
 
@@ -144,6 +159,35 @@ const EditProfileBio = () => {
             multiline
             rows={4}
             rowsMax={8}
+          />
+        </FormControl>
+      </Grid>
+      <Grid
+        item
+        container
+        md={8}
+        lg={8}
+        sm={12}
+        justify="center"
+        alignItems="flex-end"
+        className={clsx(classes.custom)}
+      >
+        <Box>
+          <Typography variant="h5">
+            <Box fontWeight="fontWeightBold">Icons</Box>
+          </Typography>
+          <Button variant="outlined" className={clsx(classes.customBtn)}>
+            <AddIcon />
+          </Button>
+        </Box>
+        <FormControl className={clsx(classes.customForm)} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-custom-link">
+            Custom Link
+          </InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-custom-link"
+            labelWidth={90}
+            className={clsx(classes.form)}
           />
         </FormControl>
       </Grid>
