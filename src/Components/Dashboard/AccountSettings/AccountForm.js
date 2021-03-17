@@ -19,7 +19,12 @@ import React, { useState } from "react";
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(2),
+    padding: theme.spacing(2),
     width: "100%",
+    background:
+      " linear-gradient(149.91deg, rgba(255, 255, 255, 0.54) 8.18%, rgba(255, 255, 255, 0.12) 43.44%)",
+    backdropFilter: "blur(42.2178px)",
+    borderRadius: "30px",
   },
   form: {
     marginTop: theme.spacing(2),
